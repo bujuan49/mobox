@@ -1,0 +1,10 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  .main {
+    height: 95%;
+  }
+  .footer {
+    flex: 1;
+  }
+}
