@@ -1,17 +1,22 @@
 // import home from "../views/home"
 // import loagind from "../views/longind"
 // import islogin from '../components/islogin'
-import { logding, home } from "./login/index"
+
+import { home, classify } from "./login/index"
+
 const routes = [
     {
-        path: "/",
+        path: "/classify",
+        Component: classify
+    },
+    {
+        path: "/home",
         Component: home
     },
     {
-        path: "/login",
-        Component: logding
-    },
-
+        path: '/',
+        redirect: '/home'
+    }
 ]
 
 export default routes;

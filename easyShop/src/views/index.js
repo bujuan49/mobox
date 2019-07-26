@@ -5,9 +5,9 @@ import './index.scss'
 export default class loding extends Component {
     render() {
         return (
-            <div>
-                    <ReactIndex />
-                    <Footer></Footer>
+            <div className='index_wrap'>
+                <ReactIndex />
+                <Footer />
             </div>
         )
     }

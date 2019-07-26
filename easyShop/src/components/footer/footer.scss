@@ -1,0 +1,19 @@
+ul {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  li {
+    flex: 1;
+    font-size: 0.1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.2rem;
+
+    border-top: 1px solid #cccccc;
+  }
+}
+.foot_wrap {
+  height: 1rem;
+}
