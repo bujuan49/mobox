@@ -1,25 +1,30 @@
 import React, { Component } from 'react'
 import Header from '../../../components/header/header'
 import './categorys.scss'
+import { inject, observer } from 'mobx-react'
+@inject('classify')
+@observer
 class categorys extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {}
+    }
+    componentDidMount() {
+        this.props.classify.category(this.props.history.location.pathname.slice(11))
+    }
     render() {
+
         return (
             <div className='categorys_wrap'>
                 <Header></Header>
                 <ul className='categorys_slide'>
                     <li>布艺软装</li>
-                    <li className='on'>软装</li>
-                    <li>布艺软装</li>
-                    <li>布艺软装</li>
-                    <li>布艺软装</li>
-                    <li>布艺软装</li>
-                    <li>布艺软装</li>
-                    <li>布艺软装</li>
+                    <li className='on'>软装</li> 
                 </ul>
                 <div className='categorys_main'>
                     <div className='categorys_title'>
                         <p style={{ marginTop: '.4rem' }}>布艺软装</p>
-                        <p>各种风格软装饰你的家</p>
+                        <p className='title_p'>各种风格软装饰你的家</p>
                     </div>
                     <div className='categorys_box'>
                         <dl>
