@@ -28,7 +28,7 @@ class Classify extends Component {
                     </div>
                     <div className='right'>
                         <div className="log"></div>
-                        <div className='fenlei'>—— 居家分类 ——</div>
+                        <div className='fenlei' style={{ color: 'skyblue' }}>— 居家分类 —</div>
                         <div className='main_dl'>
                             <dl>
                                 <dt> </dt>
