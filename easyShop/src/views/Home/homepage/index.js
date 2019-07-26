@@ -29,15 +29,37 @@ class homepage extends React.Component {
                     </Carousel> 
                 </div> 
                 <div className="nav">
-                    <div>
+                    <div><i className="icon iconfont icon-jiaju"></i><span>家居</span></div>
+                    <div><i className="icon iconfont icon-jiaju"></i><span>家居</span></div>
+                    <div><i className="icon iconfont icon-jiaju"></i><span>家居</span></div>
+                    <div><i className="icon iconfont icon-jiaju"></i><span>家居</span></div>
+                </div>
+                <div className="adv">
+                    <h4 className="title_b">品牌制造商直供</h4>
+                    <div className="bag_box">
                         {
-                            brandList&&brandList.map(item=>{
-                                
-                            })
+                            brandList&&brandList.map(item=>
+                                <div className="box" key={item.id}>
+                                    <img src={item.app_list_pic_url} alt=""/>
+                                    <span>{item.name}</span>
+                                </div>
+                            )
                         }
                     </div>
                 </div>
-                <div className="adv"></div>
+                <div className="adv">
+                    <h4 className="title_b">家居</h4>
+                    <div className="bag_box">
+                        {
+                            brandList&&brandList.map(item=>
+                                <div className="box" key={item.id}>
+                                    <img src={item.app_list_pic_url} alt=""/>
+                                    <span>{item.name}</span>
+                                </div>
+                            )
+                        }
+                    </div>
+                </div>
             </React.Fragment>
         );
     }

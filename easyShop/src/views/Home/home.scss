@@ -10,6 +10,7 @@
         width: 100%;
         display:flex;
         flex-direction: column;
+        overflow-y:auto;
     }
     .footer{
         width: 100%;
@@ -36,6 +37,9 @@
                 font-size:0.14rem;
             }
             
+        }
+        .active{
+            color:rgb(0, 132, 255);
         }
     }
 }

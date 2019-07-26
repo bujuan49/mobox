@@ -3,12 +3,19 @@ import {alldata} from "../../services/index"
 export default class Home{
     // @observable 修饰属性
     @observable count = 1000;
+    //轮播数据
     @observable banner=[];
+    //制造商数据
     @observable brandList=[];
+    //分类数据
     @observable categoryList=[];
+    //nav数据
     @observable channel=[];
+    //人气推荐数据
     @observable hotGoodsList=[];
+    //新品数据
     @observable newGoodsList=[];
+    //专题数据
     @observable topicList=[];
     // @action 修饰方法
     @action changeCount(type){
@@ -17,7 +24,7 @@ export default class Home{
     }
     @action getallData(){
         alldata().then(res=>{
-            console.log("16res...",res.data.banner)
+            console.log("16res...",res.data)
             this.banner=res.data.banner
             this.brandList=res.data.brandList
             this.categoryList=res.data.categoryList
