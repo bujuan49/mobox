@@ -15,3 +15,7 @@ export const classify = loadable({
     loading: Loing,
     loader: () => import("../../views/classify/classify")
 })
+export const categorys = loadable({   //分类详情页
+    loading: Loing,
+    loader: () => import("../../views/classify/categorys/categorys")
+})

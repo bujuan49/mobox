@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactIndex from '../router/index'
-import Footer from '../components/footer/footer'
+
 import './index.scss'
 import { BrowserRouter } from 'react-router-dom'
 export default class loding extends Component {
@@ -9,7 +9,7 @@ export default class loding extends Component {
             <div className='index_wrap'>
                 <BrowserRouter>
                     <ReactIndex />
-                    <Footer />
+
                 </BrowserRouter>
             </div>
         )

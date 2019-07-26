@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './classify.scss'
 import { inject, observer } from 'mobx-react'
+import Footer from '../../components/footer/footer'
 @inject('classify')
 @observer
 class Classify extends Component {
@@ -13,18 +14,20 @@ class Classify extends Component {
     }
     componentDidMount() {
         this.props.classify.changeCount()
-
     }
-    itemChan = (item) => {
+    itemChan = (item) => {   //切换右侧
         this.setState({ ind: item.show_index })
         this.props.classify.tab_list(item.id)
+    }
+    To = (item) => {        //点击进入详情
+        this.props.history.push('/categorys/' + item.id)
     }
     render() {
         const { categoryList, categoryList_detail } = this.props.classify
         return (
             <div className='wrap_classify_wrap'>
                 <div className="classify_search">
-                    <p>搜索商品，共239款好商品</p>
+                    <input type="text" placeholder='搜索商品，共239款好商品<' />
                 </div>
                 <div className='wrap_classify'>
                     <div className='left'>
@@ -42,7 +45,7 @@ class Classify extends Component {
                         <div className='main_dl'>
                             {
                                 categoryList_detail && categoryList_detail.subCategoryList.map(item => {
-                                    return <dl key={item.id}>
+                                    return <dl key={item.id} onClick={() => { this.To(item) }}>
                                         <dt><img src={item.wap_banner_url} alt="" /></dt>
                                         <dd>{item.front_name}</dd>
                                     </dl>
@@ -51,6 +54,7 @@ class Classify extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './home.scss'
 import Swiper from 'swiper'
 import { inject, observer } from 'mobx-react'
+import Footer from '../../components/footer/footer'
+
 @inject('home')
 @observer
 class Home extends Component {
@@ -59,7 +61,7 @@ class Home extends Component {
                     </div>
                 </div>
 
-
+                <Footer />
             </div>
         )
     }
