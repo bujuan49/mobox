@@ -9,7 +9,6 @@ export default class loding extends Component {
             <div className='index_wrap'>
                 <BrowserRouter>
                     <ReactIndex />
-
                     <Footer />
                 </BrowserRouter>
             </div>
