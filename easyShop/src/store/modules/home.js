@@ -31,7 +31,7 @@ export default class Home{
             this.hotGoodsList=res.data.hotGoodsList
             this.newGoodsList=res.data.newGoodsList
             this.topicList=res.data.topicList
-            
+          
         })
     }
 }

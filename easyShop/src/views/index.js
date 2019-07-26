@@ -33,3 +33,7 @@ export const Mine=loadable({
     loader:()=>import("../views/Home/mine"),
     loading:Loading
 })
+export const SDetail=loadable({
+    loader:()=>import("../views/sDetail/index"),
+    loading:Loading
+})
