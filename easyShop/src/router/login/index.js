@@ -3,10 +3,10 @@ import React from "react"
 function Loing() {
     return <h3>loading</h3>
 }
-// export const logding = loadable({
-//     loading: Loing,
-//     loader: () => import("../../views/loding/loding")
-// })
+export const login = loadable({
+    loading: Loing,
+    loader: () => import("../../views/login/login")
+})
 export const home = loadable({
     loading: Loing,
     loader: () => import("../../views/home/home")

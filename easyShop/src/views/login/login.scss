@@ -1,0 +1,48 @@
+.wrap-login {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.head {
+  text-align: center;
+}
+.logo {
+  width: 6.5rem;
+  height: 2rem;
+  margin-top: 1rem;
+}
+.input {
+  width: 80%;
+  height: 1rem;
+  margin-left: 10%;
+  text-align: center;
+  font-size: 0.4rem;
+  margin-top: 1rem;
+  input {
+    width: 100%;
+    margin: pxTorem(20px);
+    line-height: pxTorem(150px);
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.3rem;
+    color: #a1a1a1;
+  }
+}
+.foot {
+  width: 80%;
+  height: 2rem;
+  margin-left: 10%;
+  text-align: center;
+}
+.button {
+  width: 100%;
+  color: #fff;
+  border: none;
+  background: #108fe9;
+  border-radius: 10px;
+  font-size: .4rem;
+}
+.foot_wrap {
+  display: none;
+}

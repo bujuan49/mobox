@@ -2,7 +2,7 @@
 // import loagind from "../views/longind"
 // import islogin from '../components/islogin'
 
-import { home, classify } from "./login/index"
+import { home, classify, login } from "./login/index"
 
 const routes = [
     {
@@ -12,6 +12,10 @@ const routes = [
     {
         path: "/home",
         Component: home
+    },
+    {
+        path: "/login",
+        Component: login
     },
     {
         path: '/',
