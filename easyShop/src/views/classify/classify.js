@@ -13,10 +13,11 @@ class Classify extends Component {
     }
     componentDidMount() {
         this.props.classify.changeCount()
+
     }
     itemChan = (item) => {
         this.setState({ ind: item.show_index })
-        console.log(item.id)
+        this.props.classify.tab_list(item.id)
     }
     render() {
         const { categoryList, categoryList_detail } = this.props.classify
