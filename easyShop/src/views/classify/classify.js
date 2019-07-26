@@ -7,14 +7,19 @@ class Classify extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            ind: 1
+            ind: 1,
+            detail: null
         }
     }
     componentDidMount() {
         this.props.classify.changeCount()
     }
+    itemChan = (item) => {
+        this.setState({ ind: item.show_index })
+        console.log(item.id)
+    }
     render() {
-        const { categoryList } = this.props.classify
+        const { categoryList, categoryList_detail } = this.props.classify
         return (
             <div className='wrap_classify_wrap'>
                 <div className="classify_search">
@@ -23,33 +28,25 @@ class Classify extends Component {
                 <div className='wrap_classify'>
                     <div className='left'>
                         {
-                            categoryList && categoryList.map(item => {
-                                return <p className={this.state.ind === item.show_index ? 'on' : ''} key={item.id}>{item.name}</p>
+                            categoryList && categoryList.map((item, ind) => {
+                                return <p className={this.state.ind === item.show_index ? 'on' : ''} key={item.id} onClick={() => this.itemChan(item)}>{item.name}</p>
                             })
                         }
                     </div>
                     <div className='right'>
                         <div className="log">
-                            <img src="http://yanxuan.nosdn.127.net/92357337378cce650797444bc107b0f7.jpg" alt="" />
+                            <img src={categoryList_detail && categoryList_detail.img_url} alt="" />
                         </div>
-                        <div className='fenlei' style={{ color: 'skyblue' }}>— 居家分类 —</div>
+                        <div className='fenlei' style={{ color: 'skyblue' }}>— {categoryList_detail && categoryList_detail.front_desc} —</div>
                         <div className='main_dl'>
                             {
-                                
-                            }
-                            {/* {
-                                categoryList[this.state].subCategoryList && categoryList[this.state].subCategoryList.map(item => {
-
+                                categoryList_detail && categoryList_detail.subCategoryList.map(item => {
+                                    return <dl key={item.id}>
+                                        <dt><img src={item.wap_banner_url} alt="" /></dt>
+                                        <dd>{item.front_name}</dd>
+                                    </dl>
                                 })
-                            } */}
-                            <dl>
-                                <dt> </dt>
-                                <dd>布艺</dd>
-                            </dl>
-                            <dl>
-                                <dt> </dt>
-                                <dd>布艺</dd>
-                            </dl>
+                            }
                         </div>
                     </div>
                 </div>
