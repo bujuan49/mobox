@@ -29,6 +29,7 @@ export default class Home{
             this.brandList=res.data.brandList
             this.categoryList=res.data.categoryList
             this.hotGoodsList=res.data.hotGoodsList
+            this.channel=res.data.channel
             this.newGoodsList=res.data.newGoodsList
             this.topicList=res.data.topicList
             

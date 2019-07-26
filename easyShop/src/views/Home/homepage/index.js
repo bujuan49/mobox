@@ -13,7 +13,7 @@ class homepage extends React.Component {
         this.props.home.getallData()
     }
     render() {
-        const {banner,brandList}=this.props.home
+        const {banner,brandList,channel,newGoodsList,hotGoodsList}=this.props.home
         return (
             <React.Fragment>
                 <div className="banner">
@@ -29,35 +29,61 @@ class homepage extends React.Component {
                     </Carousel> 
                 </div> 
                 <div className="nav">
-                    <div><i className="icon iconfont icon-jiaju"></i><span>家居</span></div>
-                    <div><i className="icon iconfont icon-jiaju"></i><span>家居</span></div>
-                    <div><i className="icon iconfont icon-jiaju"></i><span>家居</span></div>
-                    <div><i className="icon iconfont icon-jiaju"></i><span>家居</span></div>
+                    {
+                        channel&&channel.map(item=>
+                            <div key={item.id}><img src={item.icon_url} alt=""/><span>{item.name}</span></div>
+                        )
+                        
+                    }
                 </div>
                 <div className="adv">
-                    <h4 className="title_b">品牌制造商直供</h4>
+                    <div className="title_b">
+                        <h4>品牌制造商直供</h4>
+                    </div>
                     <div className="bag_box">
                         {
-                            brandList&&brandList.map(item=>
+                             brandList&&brandList.map(item=>
                                 <div className="box" key={item.id}>
-                                    <img src={item.app_list_pic_url} alt=""/>
+                                    <img src={item.list_pic_url} alt=""/>
                                     <span>{item.name}</span>
                                 </div>
                             )
                         }
                     </div>
                 </div>
-                <div className="adv">
-                    <h4 className="title_b">家居</h4>
-                    <div className="bag_box">
+                <div className="newGood">
+                    <div className="title_newGood">
+                        <h4>新品首发</h4>
+                    </div>
+                    <div className="newGood_box">
                         {
-                            brandList&&brandList.map(item=>
-                                <div className="box" key={item.id}>
-                                    <img src={item.app_list_pic_url} alt=""/>
-                                    <span>{item.name}</span>
+                            newGoodsList&&newGoodsList.map(item=>
+                                <div className="sp_box" key={item.id}>
+                                    <img src={item.list_pic_url} alt=""/>
+                                    <p>{item.name}</p>
+                                    <h6>￥{item.retail_price}</h6>
                                 </div>
                             )
                         }
+                    </div>
+                </div>
+                <div className="hotList">
+                    <div className="title_hot">
+                        <h4>人气推荐</h4>
+                    </div>
+                    <div className="hotbox">
+                        {
+                           hotGoodsList&&hotGoodsList.map(item=>
+                            <div className="hotcon">
+                                <div><img src={item.list_pic_url} alt=""/></div>
+                                <div>
+                                    <h4>{item.name}</h4>
+                                    <p>{item.goods_brief}</p>
+                                    <span>{item.retail_price}</span>
+                                </div>
+                            </div> 
+                           ) 
+                        } 
                     </div>
                 </div>
             </React.Fragment>
