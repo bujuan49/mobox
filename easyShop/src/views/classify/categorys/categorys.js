@@ -8,13 +8,18 @@ class categorys extends Component {
                 <Header></Header>
                 <ul className='categorys_slide'>
                     <li>布艺软装</li>
+                    <li className='on'>软装</li>
+                    <li>布艺软装</li>
+                    <li>布艺软装</li>
+                    <li>布艺软装</li>
                     <li>布艺软装</li>
                     <li>布艺软装</li>
                     <li>布艺软装</li>
                 </ul>
                 <div className='categorys_main'>
                     <div className='categorys_title'>
-
+                        <p style={{ marginTop: '.4rem' }}>布艺软装</p>
+                        <p>各种风格软装饰你的家</p>
                     </div>
                     <div className='categorys_box'>
                         <dl>
