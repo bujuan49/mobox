@@ -1,7 +1,7 @@
 import React from 'react';
 import {inject, observer} from 'mobx-react';
 import "./specal.scss"
-@inject('home')
+@inject('special')
 @observer
 
 class Specal extends React.Component {
@@ -9,24 +9,27 @@ class Specal extends React.Component {
         super(props);
         this.state = {};
     }
+   
     componentDidMount(){
-        this.props.home.getallData()
+        this.props.special.getSpeacil({page:1,size:20})
+    }
+    sdetail(id){
+       this.props.history.push(`/Sdetail/${id}`);
+       
     }
     render() {
-        const {topicList}=this.props.home;
-        console.log(topicList);
+        const {SpecialList}=this.props.special;
         return (
             <React.Fragment>
                <div className="specalbox">
                    {
-                       topicList&&topicList.map(item=>
-                        <div className="avatar" key={item.id}>
-                            <img src={item.avatar} alt=""/>
-                            <div>
-                                <h4>{item.title}</h4>
-                                <h6>{item.subtitle}</h6>
-                            </div>
-                        </div>
+                       SpecialList&&SpecialList.map(item=>
+                         <div className='special' key={item.id} onClick={()=>this.sdetail(item.id)}>
+                             <img src={item.scene_pic_url} alt=''/>
+                             <h4>{item.title}</h4>
+                             <span>{item.subtitle}</span>
+                             <em>{item.price_info}元起</em>
+                         </div>
                        )
                    }
                </div>
