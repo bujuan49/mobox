@@ -8,5 +8,10 @@ export function tab_list(params) { //获取点击切换的数据
 export function category(params) { //获取点击切换到详情数据
     return request.get('/goods/list?categoryId=' + params)
 }
+export function nav(params) { //获取分类idnav数据
+    console.log(params)
+    return request.get('/goods/category?id=' + params)
+}
+
 
 

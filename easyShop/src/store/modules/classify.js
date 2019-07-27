@@ -1,5 +1,5 @@
 import { observable, action } from "mobx";
-import { list, tab_list, category } from '../../server/index'
+import { list, tab_list, category, nav } from '../../server/index'
 export default class List {
     // @observable 修饰属性
     @observable categoryList;
@@ -20,8 +20,11 @@ export default class List {
     @action category = async (parmase) => {
         const data = await category(parmase)
         console.log(data)
-        this.category_detail = data.data.filterCategory
         this.category_C_date = data.data.goodsList
-
+    }
+    @action nav = async (parmase) => {
+        const data = await nav(parmase)
+        console.log(data)
+        // this.category_detail = data.data.filterCategory
     }
 }
