@@ -16,18 +16,23 @@ class Classify extends Component {
         this.props.classify.changeCount()
     }
     itemChan = (item) => {   //切换右侧
+        console.log(item.id)
         this.setState({ ind: item.show_index })
         this.props.classify.tab_list(item.id)
     }
     To = (item) => {        //点击进入详情
+        console.log(item)
         this.props.history.push('/categorys/' + item.id)
+    }
+    changeTo = () => {   //跳转搜索页
+        this.props.history.push('/search')
     }
     render() {
         const { categoryList, categoryList_detail } = this.props.classify
         return (
             <div className='wrap_classify_wrap'>
                 <div className="classify_search">
-                    <input type="text" placeholder='搜索商品，共239款好商品<' />
+                    <input onClick={() => this.changeTo()} type="text" placeholder='搜索商品，共239款好商品<' />
                 </div>
                 <div className='wrap_classify'>
                     <div className='left'>

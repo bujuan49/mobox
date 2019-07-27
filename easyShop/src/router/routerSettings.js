@@ -1,4 +1,4 @@
-import { home, classify, login,categorys } from "./login/index"
+import { home, classify, login, categorys, search } from "./login/index"
 
 const routes = [
     {
@@ -16,6 +16,10 @@ const routes = [
     {
         path: "/categorys/:id",
         Component: categorys
+    },
+    {
+        path: "/search",
+        Component: search
     },
     {
         path: '/',

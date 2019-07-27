@@ -19,3 +19,7 @@ export const categorys = loadable({   //分类详情页
     loading: Loing,
     loader: () => import("../../views/classify/categorys/categorys")
 })
+export const search = loadable({   //搜索页面
+    loading: Loing,
+    loader: () => import("../../views/search/search")
+})

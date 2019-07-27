@@ -18,7 +18,9 @@ export default class List {
         this.categoryList_detail = data.data.currentCategory
     }
     @action category = async (parmase) => {
+
         const data = await category(parmase)
+        console.log(data)
         this.category_detail = data.data.filterCategory
         this.category_C_date = data.data.goodsList
 
