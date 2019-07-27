@@ -16,9 +16,9 @@ class Classify extends Component {
         this.props.classify.changeCount()
     }
     itemChan = (item) => {   //切换右侧
-        console.log(item.id)
         this.setState({ ind: item.show_index })
         this.props.classify.tab_list(item.id)
+        localStorage.setItem('key', JSON.stringify(item.id));  //把存储的侧边栏id传过去
     }
     To = (item) => {        //点击进入详情
         console.log(item)

@@ -16,7 +16,6 @@ class search extends Component {
                         <p>墨镜</p>
                         <p>墨镜</p>
                         <p>墨镜</p>
-
                     </div>
                 </div>
                 <div className='search_box_2'>

@@ -12,7 +12,8 @@ class categorys extends Component {
         }
     }
     componentDidMount() {
-        this.props.classify.category(this.props.history.location.pathname.slice(11))
+        this.props.classify.category(JSON.parse(localStorage.getItem('key')))
+        // this.props.history.location.pathname.slice(11)
     }
     render() {
         const { category_C_date, category_detail } = this.props.classify
