@@ -11,17 +11,13 @@
     display: flex;
     overflow-x: auto;
     li {
-      padding: 0 0.3rem;
+      padding: 0 0.2rem;
       flex-shrink: 0;
     }
   }
   .categorys_title {
-    height: 1.8rem;
     text-align: center;
     background: rgb(245, 245, 249);
-    p {
-      margin-top: 0.3rem;
-    }
   }
 }
 .categorys_main {
@@ -42,21 +38,27 @@ dl {
   flex-direction: column;
   text-align: center;
   width: 49%;
-  height: 3.5rem;
+  height: 4.3rem;
+  margin-top: 0.1rem;
   dd {
     display: flex;
     flex-direction: column;
   }
   dt {
     height: 50%;
-    padding: 0.3rem;
+    padding: 0.1rem;
     height: 3rem;
   }
 }
-.on {
+.ons {
   color: skyblue;
   border-bottom: 1px solid skyblue;
 }
 .title_p {
   color: rgb(148, 148, 148);
+  line-height: -0.1rem;
+}
+img {
+  width: 100%;
+  height: 100%;
 }
