@@ -23,3 +23,7 @@ export const search = loadable({   //搜索页面
     loading: Loing,
     loader: () => import("../../views/search/search")
 })
+export const goods = loadable({   //添加去购物车页面
+    loading: Loing,
+    loader: () => import("../../views/classify/goods/goods")
+})

@@ -16,9 +16,11 @@ class categorys extends Component {
         this.props.classify.nav(this.props.history.location.pathname.slice(11))
     }
     changes = (item) => {
-        console.log(item)
         this.setState({ ind: item.id })
         this.props.classify.category(item.id)
+    }
+    ToGood = (item) => {    //点击跳转到购物车
+        this.props.history.push('/goods/' + item.id)
     }
     render() {
         const { category_C_date, category_detail } = this.props.classify
@@ -40,7 +42,7 @@ class categorys extends Component {
                     <div className='categorys_box'>
                         {
                             category_C_date && category_C_date.map(item => {
-                                return <dl key={item.id} onClick={()=>{}}>
+                                return <dl key={item.id} onClick={() => { this.ToGood(item) }}>
                                     <dt>
                                         <img src={item.list_pic_url} alt="" />
                                     </dt>
