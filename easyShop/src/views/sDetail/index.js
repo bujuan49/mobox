@@ -2,6 +2,7 @@ import React from 'react';
 import {inject, observer} from 'mobx-react';
 import {Icon} from 'antd'
 import "./sdetail.scss"
+import CommentList from '../../components/CommentList'
 @inject('special')
 @observer
 
@@ -19,16 +20,35 @@ class Sdetail extends React.Component {
     }
     render() {
         let {SpecialDetail}=this.props.special;
-          console.log(SpecialDetail);
+          console.log(SpecialDetail.content);
+ 
         return (
             <React.Fragment>
                <div className="specalbox">
                    <header>
-                     <Icon type="arrow-left" />
-                     {SpecialDetail.title}
-                   </header>  
+                     <Icon type="left"  onClick={()=>this.goBack()}/>
+                     <span> {SpecialDetail.title}</span> 
+                   </header>
+                   <div dangerouslySetInnerHTML = {{ __html:SpecialDetail.content }} className='imgs'></div>
                    <section>
-                  
+                   <div className="commentWrap">
+                        <div className="titleLine">
+                          <div className="titleName">精选留言</div>
+                          <Icon type="form" />
+                        </div>
+                        
+                        <CommentList/>
+                    
+                            <div className="noComment">
+                              <div className="noCommentIcon">
+                                <img  alt=""/>
+                                <div>等你来留言</div>
+                              </div>
+                            </div>
+                        
+                        </div>
+
+          
                     
                       
                    </section>
