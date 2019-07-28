@@ -24,6 +24,5 @@ export default class List {
     @action nav = async (parmase) => {
         const data = await nav(parmase)
         this.category_detail = data.data.brotherCategory
-        console.log(data.data.brotherCategory)
     }
 }

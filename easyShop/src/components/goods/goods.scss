@@ -1,0 +1,26 @@
+.goods_foot {
+  display: flex;
+  width: 100%;
+  height: 1.3rem;
+  div {
+    font-size: 0.3rem;
+    text-align: center;
+    line-height: 1.3rem;
+  }
+  div:nth-child(1) {
+    padding: 0 0.4rem;
+  }
+  div:nth-child(2) {
+    padding: 0 0.4rem;
+  }
+  div:nth-child(3) {
+    background: rgb(255, 133, 18);
+    padding: 0 0.5rem;
+    color: #ffff;
+  }
+  div:nth-child(4) {
+    background: blue;
+    color: #ffff;
+    padding: 0 0.5rem;
+  }
+}

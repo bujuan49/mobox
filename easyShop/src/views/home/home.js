@@ -13,7 +13,6 @@ class Home extends Component {
     }
     componentDidMount() {
         this.props.home.home_All_date()
-        console.log(this.props.home)
         new Swiper(".banner", {
             loop: true
         });
