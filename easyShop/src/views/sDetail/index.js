@@ -5,7 +5,7 @@ import "./sdetail.scss"
 import CommentList from '../../components/CommentList'
 @inject('special')
 @observer
-
+//专题详情页
 class Sdetail extends React.Component {
     constructor(props) {
         super(props);
