@@ -32,7 +32,7 @@ export default class Home{
             this.channel=res.data.channel
             this.newGoodsList=res.data.newGoodsList
             this.topicList=res.data.topicList
-            
+          
         })
     }
 }

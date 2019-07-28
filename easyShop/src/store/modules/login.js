@@ -1,5 +1,5 @@
 import {observable,action} from "mobx"
-import {login, alldata} from "../../services/index"
+import {login} from "../../services/index"
 export default class Login{
     @observable all=[]
     @action submitFrom(payload){
