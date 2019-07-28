@@ -38,6 +38,6 @@ export const Manufacturer=loadable({
     loading:Loading
 })
 export const Sdetail=loadable({
-    loader:()=>import("../views/Sdetail"),
+    loader:()=>import("../views/sDetail"),
     loading:Loading
 })
