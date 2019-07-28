@@ -36,9 +36,8 @@ class Sdetail extends React.Component {
                           <div className="titleName">精选留言</div>
                           <Icon type="form" />
                         </div>
-                        
+                        11
                         <CommentList/>
-                    
                             <div className="noComment">
                               <div className="noCommentIcon">
                                 <img  alt=""/>
