@@ -19,12 +19,11 @@ export default class List {
     }
     @action category = async (parmase) => {
         const data = await category(parmase)
-        console.log(data)
         this.category_C_date = data.data.goodsList
     }
     @action nav = async (parmase) => {
         const data = await nav(parmase)
-        console.log(data)
-        // this.category_detail = data.data.filterCategory
+        this.category_detail = data.data.brotherCategory
+        console.log(data.data.brotherCategory)
     }
 }

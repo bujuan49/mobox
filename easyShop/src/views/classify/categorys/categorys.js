@@ -8,13 +8,17 @@ class categorys extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            ind: 0
+            ind: 1005010
         }
     }
     componentDidMount() {
         this.props.classify.category(JSON.parse(localStorage.getItem('key')))
-        // this.props.history.location.pathname.slice(11)
-        this.props.classify.nav(JSON.parse(localStorage.getItem('key')))
+        this.props.classify.nav(this.props.history.location.pathname.slice(11))
+    }
+    changes = (item) => {
+        console.log(item)
+        this.setState({ ind: item.id })
+        this.props.classify.category(item.id)
     }
     render() {
         const { category_C_date, category_detail } = this.props.classify
@@ -24,11 +28,9 @@ class categorys extends Component {
                 <ul className='categorys_slide'>
                     {
                         category_detail && category_detail.map((item, index) => {
-                            return <li key={item.id} className={this.state.ind === index ? 'ons' : ''}>{item.name}</li>
-
+                            return <li key={item.id} onClick={() => this.changes(item)} className={this.state.ind === item.id ? 'ons' : ''}>{item.name}</li>
                         })
                     }
-
                 </ul>
                 <div className='categorys_main'>
                     <div className='categorys_title'>
@@ -38,7 +40,7 @@ class categorys extends Component {
                     <div className='categorys_box'>
                         {
                             category_C_date && category_C_date.map(item => {
-                                return <dl key={item.id}>
+                                return <dl key={item.id} onClick={()=>{}}>
                                     <dt>
                                         <img src={item.list_pic_url} alt="" />
                                     </dt>
