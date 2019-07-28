@@ -1,4 +1,4 @@
-import {Home,Login,Homepage,Specal,Classfiy,Shop,Mine,} from "../views/index"
+import {Home,Login,Homepage,Specal,Classfiy,Shop,Mine,Manufacturer} from "../views/index"
 const route=[
     {
         path:"/home",
@@ -39,6 +39,11 @@ const route=[
                 from:"/"
             }
         ]
+    },
+    {
+        path:"/manufacturer",
+        component:Manufacturer,
+        name:'详情'
     },
     {
         path:"/login",
