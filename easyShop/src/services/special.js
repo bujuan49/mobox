@@ -6,5 +6,8 @@ export function specialData(params){
 }
 //专题详情数据
 export function detailData(params){
-    return request.get('/topic/detail/',{params:params})
+    return request.get('/topic/detail',{params:params})
+}
+export function commentData(params){
+    return request.get('/comment/list',{params:params})
 }

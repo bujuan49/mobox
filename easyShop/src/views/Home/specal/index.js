@@ -11,7 +11,7 @@ class Specal extends React.Component {
     }
    
     componentDidMount(){
-        this.props.special.getSpeacil({page:1,size:20})
+        this.props.special.getSpeacil({page:1,size:15})
     }
     sdetail(id){
        this.props.history.push(`/Sdetail/${id}`);
