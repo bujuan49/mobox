@@ -64,7 +64,7 @@ class homepage extends React.Component {
                     <div className="newGood_box">
                         {
                             newGoodsList&&newGoodsList.map(item=>
-                                <div className="sp_box" key={item.id} onClick={()=>this.props.history.push({pathname:""})}>
+                                <div className="sp_box" key={item.id} onClick={()=>this.props.history.push({pathname:"/newDatail/"+item.id})}>
                                     <img src={item.list_pic_url} alt=""/>
                                     <p>{item.name}</p>
                                     <h6>￥{item.retail_price}</h6>

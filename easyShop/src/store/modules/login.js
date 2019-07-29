@@ -5,7 +5,7 @@ export default class Login{
     @action submitFrom(payload){
         console.log(payload)
         login(payload).then(res=>{
-           console.log(res)
+           console.log(res.data)
         })
     }
 } 

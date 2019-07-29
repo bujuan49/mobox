@@ -2,12 +2,15 @@
 import Home from './modules/home'
 import Login from './modules/login';
 import Special from './modules/special'
+import Loading from './modules/loading';
 // 实例化模块
 const home = new Home();
 const login = new Login();
 const special=new Special();
+const loading=new Loading()
 export default{
     home,
     login,
-    special
+    special,
+    loading
 }

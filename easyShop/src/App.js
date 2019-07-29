@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter} from "react-router-dom"
 import {MapRouter,router} from "./router/index"
+import Loading from "./components/Loading"
 class App extends React.Component{
     constructor(props) {
       super(props);
@@ -8,9 +9,13 @@ class App extends React.Component{
   }
   render(){
       return (
-        <BrowserRouter>
-            <MapRouter routes={router}></MapRouter>
-        </BrowserRouter>
+        <>
+          <Loading/>
+          <BrowserRouter>
+              <MapRouter routes={router}></MapRouter>
+          </BrowserRouter>
+          
+       </> 
     )
   }
 };

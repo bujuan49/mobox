@@ -5,3 +5,6 @@ export function alldata(){
 export function branddetail(payload){
     return request.get("/brand/detail",{params:payload})
 }
+export function goodsdetail(payload){
+    return request.get("/goods/detail",{params:payload})
+}

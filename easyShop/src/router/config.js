@@ -1,4 +1,4 @@
-import {Home,Login,Homepage,Specal,Classfiy,Shop,Mine,Manufacturer,Sdetail} from "../views/index"
+import {Home,Login,Homepage,Specal,Classfiy,Shop,Mine,Manufacturer,Sdetail,newDatail} from "../views/index"
 
 const route=[
     {
@@ -56,6 +56,11 @@ const route=[
       path:'/sdetail/:id'  ,
       component:Sdetail,
       name:'专题详情'
+    },
+    {
+        path:"/newDatail",
+        component:newDatail,
+        name:"新品详情"
     },
     {
         to:"/home",

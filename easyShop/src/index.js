@@ -10,7 +10,6 @@ import "antd/dist/antd.css"
 // 引入fastClick，解决300ms延迟
 var FastClick = require('fastclick');
 FastClick.attach(document.body);
-
 ReactDOM.render(<Provider {...store}>
         <App />
     </Provider>, document.getElementById('root'));

@@ -1,5 +1,5 @@
 import { observable, action } from "mobx";
-import {alldata,branddetail,newDatail} from "../../services/index"
+import {alldata,branddetail,goodsdetail} from "../../services/index"
 export default class Home{
     // @observable 修饰属性
     @observable count = 1000;
@@ -19,9 +19,10 @@ export default class Home{
     @observable topicList=[];
     //制造商详情
     @observable detailData={};
+    //新品详情
+    @observable newdatail=null;
     // @action 修饰方法
     @action changeCount(type){
-        console.log('type...', type);
         type==='+'? this.count++: this.count--;
     }
     @action getallData(){
@@ -40,11 +41,13 @@ export default class Home{
     }
     @action getDetail(payload){
         branddetail(payload).then(res=>{
-            console.log(res.data.brand)
             this.detailData=res.data.brand
         })
     }
-    @action newDatail(){
-        
+    @action newDatail(payload){
+        goodsdetail(payload).then(res=>{
+            console.log(res)
+            this.newdatail=res.data
+        })
     }
 }
