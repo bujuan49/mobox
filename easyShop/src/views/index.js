@@ -41,3 +41,7 @@ export const Sdetail=loadable({
     loader:()=>import("../views/sDetail"),
     loading:Loading
 })
+export const CommentWrite=loadable({
+    loader:()=>import("../views/CommentWrite"),
+    loading:Loading
+})
