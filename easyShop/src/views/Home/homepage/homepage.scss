@@ -7,7 +7,7 @@ p{
     padding: 0; 
 }
 .banner{
-    height:auto;
+    height:5.6rem;
     width: 100%;
     img{
         width: 100%;
@@ -18,13 +18,14 @@ p{
     }
 }
 .nav{
-    height: 2rem;
+    height: 1.5rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-bottom:0.1rem solid #e5e5e5;
     div{
         width: 20%;
+        height: 1.5rem;
         text-align: center;
         display: flex;  
         flex-direction: column;
@@ -197,7 +198,6 @@ p{
         flex-wrap: wrap;
         text-align: center;
         background: #e5e5e5;
-        
        .sp_box{
             width: 50%;
             flex-shrink: 0;

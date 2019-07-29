@@ -1,5 +1,5 @@
 import React from 'react';
-class Manufacturer extends React.Component {
+ class newDatail extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -8,10 +8,9 @@ class Manufacturer extends React.Component {
     render() {
         return (
             <React.Fragment>
-                manufacturer
+                newDatail
             </React.Fragment>
         );
     }
 }
-
-export default Manufacturer;
+export default newDatail;

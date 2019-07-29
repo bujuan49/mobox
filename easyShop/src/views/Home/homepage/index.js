@@ -18,7 +18,7 @@ class homepage extends React.Component {
     }
     
     render() {
-        console.log(this.props)
+        console.log(this.props.history)
         const {banner,brandList,channel,newGoodsList,hotGoodsList,topicList,categoryList}=this.props.home;
         return (
             <React.Fragment>
@@ -49,7 +49,7 @@ class homepage extends React.Component {
                     <div className="bag_box">
                         {
                              brandList&&brandList.map(item=>
-                                <div className="box" key={item.id}>
+                                <div className="box" key={item.id} onClick={()=>this.props.history.push({pathname:'/manufacturer/'+item.id})}>
                                     <img src={item.list_pic_url} alt=""/>
                                     <span>{item.name}</span>
                                 </div>
@@ -64,7 +64,7 @@ class homepage extends React.Component {
                     <div className="newGood_box">
                         {
                             newGoodsList&&newGoodsList.map(item=>
-                                <div className="sp_box" key={item.id}>
+                                <div className="sp_box" key={item.id} onClick={()=>this.props.history.push({pathname:""})}>
                                     <img src={item.list_pic_url} alt=""/>
                                     <p>{item.name}</p>
                                     <h6>￥{item.retail_price}</h6>

@@ -1,5 +1,5 @@
 import { observable, action } from "mobx";
-import {alldata} from "../../services/index"
+import {alldata,branddetail,newDatail} from "../../services/index"
 export default class Home{
     // @observable 修饰属性
     @observable count = 1000;
@@ -17,6 +17,8 @@ export default class Home{
     @observable newGoodsList=[];
     //专题数据
     @observable topicList=[];
+    //制造商详情
+    @observable detailData={};
     // @action 修饰方法
     @action changeCount(type){
         console.log('type...', type);
@@ -34,5 +36,15 @@ export default class Home{
             this.topicList=res.data.topicList
           
         })
+        
+    }
+    @action getDetail(payload){
+        branddetail(payload).then(res=>{
+            console.log(res.data.brand)
+            this.detailData=res.data.brand
+        })
+    }
+    @action newDatail(){
+        
     }
 }
