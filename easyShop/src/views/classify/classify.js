@@ -13,6 +13,7 @@ class Classify extends Component {
         }
     }
     componentDidMount() {
+      
         this.props.classify.changeCount()
     }
     itemChan = (item) => {   //切换右侧

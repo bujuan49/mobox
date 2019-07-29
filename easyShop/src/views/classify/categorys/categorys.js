@@ -11,7 +11,14 @@ class categorys extends Component {
             ind: 1005010
         }
     }
+    componentWillMount() {
+        if (window.location.href.indexOf("#") == -1) {
+            window.location.href = window.location.href + "#";
+            window.location.reload();
+        }
+    }
     componentDidMount() {
+
         this.props.classify.category(JSON.parse(localStorage.getItem('key')))
         this.props.classify.nav(this.props.history.location.pathname.slice(11))
     }
