@@ -1,5 +1,5 @@
 import { observable, action } from "mobx";
-import { goods_date, related } from '../../server/index'
+import { goods_date, related, addordelete } from '../../server/index'
 export default class Goods {
     // @observable 修饰属性
     @observable goods_date = '';
@@ -12,12 +12,15 @@ export default class Goods {
         this.goods_date = data.data
         this.goods_date_swiper = data.data.gallery
         this.goods_date_name = data.data.info
-        console.log(data.data.info)
     }
     @action related_shop = async (parmase) => {
         const data = await related(parmase)
         this.related_shop_related = data.data.goodsList
-        console.log(data.data.goodsList)
+    }
+    @action addordelete = async (parmase) => {
+        console.log(parmase)
+        const data = await addordelete(parmase)
+
     }
 }
 

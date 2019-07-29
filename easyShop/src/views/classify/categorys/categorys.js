@@ -18,7 +18,6 @@ class categorys extends Component {
         }
     }
     componentDidMount() {
-
         this.props.classify.category(JSON.parse(localStorage.getItem('key')))
         this.props.classify.nav(this.props.history.location.pathname.slice(11))
     }

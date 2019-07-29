@@ -96,7 +96,7 @@ class goods extends Component {
 
                     </div>
                 </div>
-                <GoodFoot></GoodFoot>
+                <GoodFoot shopping={goods_date_name}></GoodFoot>
                 {/* 点击出现弹框 */}
                 {/* <div className="goodsSizeDo">
                     <div className='dock'>

@@ -4,6 +4,8 @@ export function goods_date(parmase) {     //获取本商品购物页面数据
 
 }
 export function related(parmase) {     //获取相关商品
-    console.log(parmase, '12312321132')
     return request.get('/goods/related/?id=' + parmase)
+}
+export function addordelete(parmase) {     //获取相关商品
+    return request.post('/collect/addordelete', { parmase })
 }
