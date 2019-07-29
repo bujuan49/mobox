@@ -2,19 +2,21 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  font-size: 0.3rem;
+}
+.home_mains {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   overflow-y: auto;
 }
 .banner {
   width: 100%;
   height: 3rem;
-}
-
-.swiper-container {
-  width: 100%;
-  height: 3rem;
-  overflow: hidden;
   .swiper-wrapper {
     display: flex;
+    overflow: hidden;
     width: 100%;
     height: 100%;
     .swiper-slide {
@@ -28,37 +30,202 @@
     }
   }
 }
-.home_title {
-  flex: 1;
+.nav {
+  height: 2rem;
   display: flex;
-  flex-direction: column;
-  .left_home {
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 0.1rem solid #e5e5e5;
+  div {
+    width: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.4rem;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+.adv {
+  width: 100%;
+  height: 5rem;
+  .title_b {
     height: 1rem;
-    ul {
-      display: flex;
-      height: 100%;
-      li {
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h4 {
+      font-size: 0.3rem;
+      font-weight: 600;
+    }
+  }
+  .bag_box {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .box {
+      width: 50%;
+      height: 50%;
+      flex-shrink: 0;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      span {
+        position: absolute;
+        top: 0.1rem;
+        left: 0.2rem;
+        color: #000;
       }
     }
   }
-  .right_home {
-    margin-top: 0.2rem;
-    p {
+}
+.newGood {
+  width: 100%;
+  height: 9.5rem;
+  padding-bottom: 0.1rem;
+  border-bottom: 0.1rem solid #e5e5e5;
+  .title_newGood {
+    height: 1rem;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h4 {
       font-size: 0.3rem;
-      text-align: center;
-      background: #ffff;
+      font-weight: 600;
     }
   }
-  .home_main {
+  .newGood_box {
+    width: 100%;
+    height: 8rem;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 0.2rem;
-    div {
+    justify-content: space-around;
+    text-align: center;
+    .sp_box {
       width: 50%;
-      height: 2rem;
+      height: 50%;
+      flex-shrink: 0;
       img {
-        height: 100%;
         width: 100%;
+        height: 80%;
+      }
+      h6 {
+        color: #ba6767;
+      }
+    }
+  }
+}
+.hotList {
+  width: 100%;
+  height: 10rem;
+  border-bottom: 0.1rem solid #e5e5e5;
+
+  .hotbox {
+    padding: 0 0.2rem;
+    .hotcon {
+      display: flex;
+      align-items: center;
+      border-top: 0.01rem solid #e5e5e5;
+      justify-content: space-between;
+      div {
+        img {
+          width: 2.5rem;
+          margin: 0 0.2rem;
+        }
+        &:nth-child(2) {
+          flex: 1;
+        }
+      }
+    }
+  }
+}
+.title_hot {
+  height: 1rem;
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h4 {
+    font-size: 0.3rem;
+    font-weight: 600;
+  }
+}
+.scrollbox {
+  width: 100%;
+  height: 8rem;
+  .swiper-slide {
+    width: 100%;
+    text-align: center;
+    text-align: center;
+    overflow: hidden;
+    a {
+      img {
+        width: 85%;
+        height: 5.2rem;
+        margin: 0 auto;
+      }
+      .titleText {
+        height: 0.6rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+.cateGory {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  .title_cateGory {
+    height: 1rem;
+    text-align: center;
+    font-weight: 600;
+    flex-direction: column;
+    display: flex;
+    background: #e5e5e5;
+    align-items: center;
+    justify-content: center;
+    h4 {
+      font-size: 0.3rem;
+      font-weight: 600;
+    }
+  }
+  .newGood_box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background: #e5e5e5;
+
+    .sp_box {
+      width: 49%;
+      flex-shrink: 0;
+      background: #fff;
+      padding: 0.03rem;
+      &:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      img {
+        width: 100%;
+      }
+      h6 {
+        color: #ba6767;
       }
     }
   }
