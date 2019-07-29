@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import './home.scss'
 import Swiper from 'swiper'
-import { Carousel } from "antd"
 import { inject, observer } from 'mobx-react'
 import Footer from '../../components/footer/footer'
-
 @inject('home')
 @observer
 class Home extends Component {
@@ -38,10 +36,10 @@ class Home extends Component {
                             }
                         </div>
                     </div>
-                    <div className="nav" style={{ fontSize: '.2rem' }}>
+                    <div className="nav" style={{ height: '4rem' }}>
                         {
                             channel && channel.map(item =>
-                                <div key={item.id}><img src={item.icon_url} alt="" style={{ height: '.7rem', width: '.7rem' }} /><span>{item.name}</span></div>
+                                <div key={item.id}><img src={item.icon_url} alt="" style={{ height: '.6rem', width: '.6rem',marginTop: '.2rem' }} /><span style={{ marginTop: '.1rem' }}>{item.name}</span></div>
                             )
                         }
                     </div>

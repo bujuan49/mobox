@@ -31,11 +31,12 @@
   }
 }
 .nav {
-  height: 2rem;
+  height: 5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
   border-bottom: 0.1rem solid #e5e5e5;
+  font-size: 0.3rem;
   div {
     width: 20%;
     text-align: center;
@@ -43,7 +44,7 @@
     flex-direction: column;
     padding: 0 0.4rem;
     img {
-      width: 100%;
+      width: 80%;
       height: auto;
     }
   }

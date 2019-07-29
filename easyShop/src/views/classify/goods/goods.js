@@ -52,7 +52,7 @@ class goods extends Component {
                     </div>
                     <div className="goods_Size"><div></div><div>x 0</div><div>选择规格<i className="iconfont icon-right"></i></div></div>
                     <div className="goods_Attribute"><div className="goodsAttributeLine">-- 商品参数 --</div></div>
-                    <div class="goodsAttributeList">
+                    <div className="goodsAttributeList">
                         <div className="goodsAttributeItem">
                             <div className="attributeLabel">尺寸</div>
                             <div className="attributeContent">160*230cm</div></div>
@@ -64,7 +64,7 @@ class goods extends Component {
                             <div className="attributeContent">中国北京</div></div>
                     </div>
                     <div className="goodsAttribute">
-                        <div className="goodsAttributeLine">常见问题</div>
+                        <div className="goodsAttributeLine">-- 常见问题 --</div>
                         <div className="problemWrap"><div className="problemLabel"><span>√</span>购买运费如何收取？</div>
                             <div className="problemContent">单笔订单金额（不含运费）满88元免邮费；不满88元，每单收取10元运费。(港澳台地区需满</div>
                         </div><div className="problemWrap"><div className="problemLabel"><span>√</span>使用什么快递发货？</div>
@@ -74,6 +74,16 @@ class goods extends Component {
                         <div className="problemWrap"><div className="problemLabel"><span>√</span>如何开具发票？</div>
                             <div className="problemContent">1.如需开具普通发票，请在下单时选择“我要开发票”并填写相关信息（APP仅限2.4.0及以</div>
                         </div>
+                    </div>
+                    <div className="goodsAttribute"><div className="goodsAttributeLine">-- 大家都在看 --</div></div>
+                    <div className="categorys_box">
+                        <dl>
+                            <dt>123</dt>
+                            <dd>
+                                <span style={{ whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden', textAlign: 'center', padding: '0 .2rem' }}>123</span>
+                                <span style={{ color: 'red', marginTop: '.1rem' }}>$123元</span>
+                            </dd>
+                        </dl>
                     </div>
                 </div>
                 <GoodFoot></GoodFoot>
