@@ -45,3 +45,7 @@ export const CommentWrite=loadable({
     loader:()=>import("../views/CommentWrite"),
     loading:Loading
 })
+export const Comment=loadable({
+    loader:()=>import("../views/Comment"),
+    loading:Loading
+})

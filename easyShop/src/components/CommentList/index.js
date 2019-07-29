@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-
+import '../CommentList/commentList.scss'
 export class CommentLists extends Component {
   render() {
     let {comments}=this.props;
-    console.log(comments)
+   // console.log(comments)
     return (
       <div>
            <div className="commentList">

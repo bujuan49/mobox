@@ -1,4 +1,4 @@
-import {Home,Login,Homepage,Specal,Classfiy,Shop,Mine,Manufacturer,Sdetail,CommentWrite} from "../views/index"
+import {Home,Login,Homepage,Specal,Classfiy,Shop,Mine,Manufacturer,Sdetail,CommentWrite,Comment} from "../views/index"
 
 const route=[
     {
@@ -61,6 +61,11 @@ const route=[
         path:'/commentWrite/:id'  ,
         component:CommentWrite,
         name:'添加评论'
+    },
+    {
+        path:'/comment/:id'  ,
+        component:Comment,
+        name:'查看更多评论'
     },
     {
         to:"/home",
