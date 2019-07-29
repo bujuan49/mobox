@@ -190,3 +190,96 @@ img {
     }
   }
 }
+
+.goodsSizeDo {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.dock {
+  position: absolute;
+  background: #fff;
+  border: 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 4rem;
+  text-align: center;
+  overflow: hidden;
+  z-index: 9999;
+}
+.goodsSizeSetMsg {
+  height: 100px;
+  display: flex;
+  .gooodsSizePriceAndSize {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 0.1rem;
+    flex: 1 1;
+    height: 100%;
+    font-size: 0.3rem;
+    text-align: left;
+    div {
+      width: 100%;
+      height: auto;
+      line-height: 0.6rem;
+      padding-left: 0.3rem;
+      span {
+        color: red;
+      }
+    }
+  }
+}
+.closeModel {
+  width: auto;
+  color: red;
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+}
+.goodsSizeItemName {
+  text-align: left;
+  color: black;
+  padding-left: 0.4rem;
+}
+.goodsBuyCount {
+  width: 4rem;
+  height: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  div:nth-child(1) {
+    width: 30%;
+  }
+  div:nth-child(2) {
+    width: 40%;
+  }
+  div:nth-child(3) {
+    width: 30%;
+  }
+}
+.goodsDoWrap {
+  height: 1rem;
+  display: flex;
+  div {
+    width: 50%;
+    color: white;
+    line-height: 1rem;
+  }
+  div:nth-child(1) {
+    background: linear-gradient(90deg, #ff9500, #ff5e3a);
+  }
+  div:nth-child(2) {
+    background: linear-gradient(90deg, #1d62f0, #19d5fd);
+  }
+}
