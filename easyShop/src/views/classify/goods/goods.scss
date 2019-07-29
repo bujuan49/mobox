@@ -240,6 +240,12 @@ img {
 .closeModel {
   width: auto;
   color: red;
+  margin: 0.2rem 0.2rem 0 0;
+  z-index: 99;
+  i {
+    padding: 0.1rem;
+    border: 1px solid red;
+  }
 }
 .iconfont {
   font-family: "iconfont" !important;

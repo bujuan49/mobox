@@ -23,7 +23,7 @@ class goods extends Component {
             autoplay: true
         });
     }
-    specif = () => {
+    specif = () => {     //点击出现弹框 
         console.log(1)
     }
     render() {
@@ -98,7 +98,7 @@ class goods extends Component {
                 </div>
                 <GoodFoot shopping={goods_date_name}></GoodFoot>
                 {/* 点击出现弹框 */}
-                {/* <div className="goodsSizeDo">
+                <div className="goodsSizeDo">
                     <div className='dock'>
                         <div className="goodsSizeSetMsg">
                             <div className="gooodsSizePriceAndSize">
@@ -107,7 +107,7 @@ class goods extends Component {
                                 <div>已选择: </div>
                             </div>
                             <div className="closeModel">
-                                <i className="iconfont icon-cc-close-square"></i>
+                                <i>X</i>
                             </div>
                         </div>
                         <div className="goodsSizeItem">
@@ -123,7 +123,7 @@ class goods extends Component {
                             <div>立即下单</div>
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
         )
     }
