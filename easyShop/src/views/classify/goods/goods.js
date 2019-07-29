@@ -98,7 +98,7 @@ class goods extends Component {
                 </div>
                 <GoodFoot shopping={goods_date_name}></GoodFoot>
                 {/* 点击出现弹框 */}
-                <div className="goodsSizeDo">
+                {/* <div className="goodsSizeDo">
                     <div className='dock'>
                         <div className="goodsSizeSetMsg">
                             <div className="gooodsSizePriceAndSize">
@@ -123,7 +123,7 @@ class goods extends Component {
                             <div>立即下单</div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         )
     }
