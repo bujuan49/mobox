@@ -27,14 +27,14 @@ class goods extends Component {
     specif = () => {     //点击出现弹框 
         this.setState({ flag: '' })
     }
-    close = () => {
+    close = () => {     //点击消失弹框
         this.setState({ flag: 'none' })
     }
     render() {
         const { goods_date_swiper, goods_date_name, related_shop_related } = this.props.goods
         return (
             <div className='goods_wrap'>
-                <Header title={goods_date_name.goods_brief}></Header>
+                <Header title={goods_date_name.goods_brief} t={this.state.flag}></Header>
                 <div className="goods_main">
                     <div className="swiper-container goods_banner">
                         <div className="swiper-wrapper">

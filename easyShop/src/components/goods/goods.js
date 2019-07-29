@@ -10,6 +10,7 @@ class footer extends Component {
             flag: false
         }
     }
+
     add = () => {
         this.setState({ flag: !this.state.flag })
         if (!this.state.flag) {
