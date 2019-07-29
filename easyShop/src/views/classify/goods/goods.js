@@ -52,6 +52,17 @@ class goods extends Component {
                     </div>
                     <div className="goods_Size"><div></div><div>x 0</div><div>选择规格<i className="iconfont icon-right"></i></div></div>
                     <div className="goods_Attribute"><div className="goodsAttributeLine">-- 商品参数 --</div></div>
+                    <div class="goodsAttributeList">
+                        <div className="goodsAttributeItem">
+                            <div className="attributeLabel">尺寸</div>
+                            <div className="attributeContent">160*230cm</div></div>
+                        <div className="goodsAttributeItem"><div className="attributeLabel">颜色</div>
+                            <div className="attributeContent">蓝灰格</div></div>
+                        <div className="goodsAttributeItem"><div className="attributeLabel">材质</div>
+                            <div className="attributeContent">绒面：100% 聚酯纤维 背面：52% 聚酯纤维/ 48% 棉</div></div>
+                        <div className="goodsAttributeItem"><div className="attributeLabel">产地</div>
+                            <div className="attributeContent">中国北京</div></div>
+                    </div>
                     <div className="goodsAttribute">
                         <div className="goodsAttributeLine">常见问题</div>
                         <div className="problemWrap"><div className="problemLabel"><span>√</span>购买运费如何收取？</div>

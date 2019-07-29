@@ -110,3 +110,29 @@ img {
     padding: 0.1rem 0;
   }
 }
+.goodsAttributeList {
+  background: #fff;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: -0.2rem;
+}
+.goodsAttributeItem {
+  display: flex;
+  align-items: center;
+  line-height: 0.8rem;
+  background: #dcdfe6;
+  margin-top: 0.1rem;
+  .attributeLabel {
+    width: 2rem;
+    color: gray;
+    padding: 0 0.1rem;
+    font-size: 0.32rem;
+    text-align: center;
+  }
+  .attributeContent {
+    flex: 1 1;
+    font-size: 0.3rem;
+    line-height: 0.6rem;
+    padding: 0 0.1rem;
+  }
+}
