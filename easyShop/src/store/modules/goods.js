@@ -29,8 +29,6 @@ export default class Goods {
     @action list = async (parmase) => {  //点击模糊出来的具体商品
         const data = await list(parmase)
         this.helper_list = data.data.categoryList
-        console.log(data)
-
     }
 }
 

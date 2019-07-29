@@ -10,6 +10,7 @@ class goods extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            flag: 'none'
         }
     }
     componentDidMount() {
@@ -24,7 +25,10 @@ class goods extends Component {
         });
     }
     specif = () => {     //点击出现弹框 
-        console.log(1)
+        this.setState({ flag: '' })
+    }
+    close = () => {
+        this.setState({ flag: 'none' })
     }
     render() {
         const { goods_date_swiper, goods_date_name, related_shop_related } = this.props.goods
@@ -55,6 +59,9 @@ class goods extends Component {
                     </div>
                     <div className="goods_Size" onClick={() => this.specif()}><div></div><div>x 0</div><div>选择规格<i className="iconfont icon-right"></i></div></div>
                     <div className="goods_Attribute"><div className="goodsAttributeLine">-- 商品参数 --</div></div>
+                    <div className="goods_main_img" dangerouslySetInnerHTML={{ __html: goods_date_name.goods_date_name }}>
+                        {/* 多余的图片 */}
+                    </div>
                     <div className="goodsAttributeList">
                         <div className="goodsAttributeItem">
                             <div className="attributeLabel">尺寸</div>
@@ -98,7 +105,7 @@ class goods extends Component {
                 </div>
                 <GoodFoot shopping={goods_date_name}></GoodFoot>
                 {/* 点击出现弹框 */}
-                {/* <div className="goodsSizeDo">
+                <div className="goodsSizeDo" style={{ display: this.state.flag }}>
                     <div className='dock'>
                         <div className="goodsSizeSetMsg">
                             <div className="gooodsSizePriceAndSize">
@@ -107,7 +114,7 @@ class goods extends Component {
                                 <div>已选择: </div>
                             </div>
                             <div className="closeModel">
-                                <i>X</i>
+                                <i onClick={() => this.close()}>X</i>
                             </div>
                         </div>
                         <div className="goodsSizeItem">
@@ -123,7 +130,7 @@ class goods extends Component {
                             <div>立即下单</div>
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
         )
     }

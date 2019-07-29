@@ -192,6 +192,7 @@ img {
 }
 
 .goodsSizeDo {
+
   position: fixed;
   top: 0;
   right: 0;
@@ -288,4 +289,10 @@ img {
   div:nth-child(2) {
     background: linear-gradient(90deg, #1d62f0, #19d5fd);
   }
+}
+.goods_main_img {
+  width: 100%;
+  background: red;
+  display: flex;
+  flex-direction: column;
 }
