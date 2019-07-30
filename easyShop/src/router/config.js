@@ -1,4 +1,5 @@
-import {Home,Login,Homepage,Specal,Classfiy,Shop,Mine,Manufacturer,Sdetail,CommentWrite,Comment,Collect,newDatail} from "../views/index"
+import {Home,Login,Homepage,Specal,Classfiy,Shop,Mine,Manufacturer,Sdetail,CommentWrite,Comment,Collect,newDatail,Address} from "../views/index"
+
 const route=[
     {
         path:"/home",
@@ -54,6 +55,11 @@ const route=[
         path:"/collect",
         component:Collect,
         name:'收藏'
+    },
+    {
+        path:"/address",
+        component:Address,
+        name:'地址'
     },
     {
       path:'/sdetail/:id',

@@ -57,3 +57,7 @@ export const Collect=loadable({
     loader:()=>import("../views/Collect"),
     loading:Loading
 })
+export const Address=loadable({
+    loader:()=>import("../views/Address"),
+    loading:Loading
+})
