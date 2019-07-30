@@ -61,7 +61,7 @@ class goods extends Component {
                         <div className="goodsNameSubTitle">{goods_date_name.goods_brief}</div>
                         <div className="goodsPriceTitle">￥{goods_date_name.retail_price}</div>
                     </div>
-                    <div className="goods_Size" onClick={() => this.specif()}><div></div><div>x {goods_date_name.add_time}</div><div>选择规格<i className="iconfont icon-right"></i></div></div>
+                    <div className="goods_Size" onClick={() => this.specif()}><div></div><div>x {goods_date_name.add_time}</div><div>选择规格<i  className="iconfont icon-right"></i></div></div>
                     <div className="goods_Attribute"><div className="goodsAttributeLine">-- 商品参数 --</div></div>
                     <div className="goods_main_img" dangerouslySetInnerHTML={{ __html: goods_date_name.goods_date_name }}>
                         {/* 多余的图片 */}
@@ -107,7 +107,7 @@ class goods extends Component {
                     </div>
                 </div>
                 {/* 缺少点击出现下面购物车的一步 */}
-                <GoodFoot shopping={this.state.flag}></GoodFoot>
+                <GoodFoot shopping={goods_date_name} handleclick={this.specif.bind(this)}></GoodFoot>
                 {/* 点击出现弹框 */}
                 <div className="goodsSizeDo" style={{ display: this.state.flag }}>
                     <div className='dock'>

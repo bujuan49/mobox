@@ -11,6 +11,7 @@ class footer extends Component {
         }
     }
     add = () => {   //点击添加到购物车
+        this.setState({ flag: !this.props.shopping.is_host })
         if (!this.state.flag) {
             this.props.shopping.is_host = 1;
             this.props.goods.addordelete({
@@ -19,15 +20,13 @@ class footer extends Component {
             })
         }
     }
-    car = () => {
-        console.log(1)
-    }
+
     render() {
         return (
             <div className='goods_foot'>
                 <div className={this.state.flag ? 'iconfont icon-xingxing action' : 'iconfont icon-xingxing  '} onClick={() => this.add()} style={{ fontSize: '.6rem' }}></div>
-                <div className='iconfont icon-jieshaoxinxi_o' style={{ fontSize: '.6rem' }}></div>
-                <div onClick={() => this.car()}>加入购物车</div>
+                <div className='iconfont icon-jieshaoxinxi_o' onClick={() => this.props.history.push('/shopcar')} style={{ fontSize: '.6rem' }}></div>
+                <div onClick={() => this.props.handleclick()}>加入购物车</div>
                 <div>立即购买</div>
             </div>
         )
