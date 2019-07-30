@@ -62,6 +62,9 @@ class my extends Component {
                 }]
         }
     }
+    to = (item) => {
+        console.log(item)
+    }
     render() {
         const userPhone = window.localStorage.getItem('user')
         return (
@@ -88,7 +91,7 @@ class my extends Component {
                             this.state.userPower.map((item) => (
                                 <div key={item.name} style={'link' in item ? { color: '#2196f3' } : {}} onClick={this.showPower.bind(this, item)} >
                                     <i className={`iconfont ${item.icon}`} style={'link' in item ? { color: '#2196f3' } : {}}></i>
-                                    <div>{item.name}</div>
+                                    <div onClick={() => this.to(item)}>{item.name}</div>
                                 </div>)
                             )
                         }
@@ -102,6 +105,7 @@ class my extends Component {
         );
     }
     showPower = (item) => {
+        console.log(item.link)
         if ('link' in item) {
             this.props.history.push(item.link)
         } else {

@@ -43,8 +43,14 @@ export const Sdetail = loadable({   //我的
     loading: Loing,
     loader: () => import("../../views/special/detail/detail")
 })
-
-
+export const address = loadable({   //地址
+    loading: Loing,
+    loader: () => import("../../views/my/address/address")
+})
+export const append = loadable({   //增加地址
+    loading: Loing,
+    loader: () => import("../../views/my/address/append/append")
+})
 
 
 

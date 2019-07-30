@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import './goods.scss'
 import { inject, observer } from 'mobx-react'
+import PropTypes from 'prop-types'
+import { withRouter } from 'react-router-dom'
+
 @inject('goods')
 @observer
 class footer extends Component {
@@ -20,16 +23,12 @@ class footer extends Component {
             })
         }
     }
-
     render() {
         return (
 
             <div className='goods_foot'>
-                {
-                    console.log(this.historys, '111111111111111111')
-                }
-                <div className={this.state.flag ? 'iconfont icon-xingxing action' : 'iconfont icon-xingxing  '} onClick={() => this.add()} style={{ fontSize: '.6rem' }}></div>
-                <div className='iconfont icon-jieshaoxinxi_o' style={{ fontSize: '.6rem' }}></div>
+                <div className={this.state.flag ? 'iconfont icon-xingxing action' : 'iconfont icon-xingxing'} onClick={() => this.add()} style={{ fontSize: '.6rem' }}></div>
+                <div className='iconfont icon-jieshaoxinxi_o' onClick={() => this.props.historys.push('/shopcar')} style={{ fontSize: '.6rem' }}></div>
                 <div onClick={() => this.props.handleclick()}>加入购物车</div>
                 <div>立即购买</div>
             </div>
@@ -37,4 +36,4 @@ class footer extends Component {
     }
     // onClick={() => this.props.history.push('/shopcar')} 
 }
-export default footer
+export default withRouter(footer)

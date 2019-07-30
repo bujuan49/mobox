@@ -22,7 +22,7 @@ class goods extends Component {
             pagination: {
                 el: '.swiper-pagination',
             },
-            autoplay: true
+            autoplay: true  
         });
     }
     componentWillReceiveProps() {
