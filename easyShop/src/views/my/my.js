@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Footer from '../../../components/footer/footer'
 import './my.scss';
 import { inject, observer } from "mobx-react";
 import Footer from '../../components/footer/footer'

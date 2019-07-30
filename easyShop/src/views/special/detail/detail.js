@@ -2,7 +2,7 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Icon } from 'antd'
 import "./detail.scss"
-// import CommentLists from '../../components/CommentList'
+import CommentLists from '../../../components/commentList/index'
 import { Link } from 'react-router-dom'
 
 @inject('special')
@@ -52,7 +52,7 @@ class detail extends React.Component {
                                     <Icon type="form" onClick={this.postWrite.bind(this)} />
                                 </div>
                             </div>
-                            {/* <CommentLists comments={CommentList}></CommentLists> */}
+                            <CommentLists comments={CommentList}></CommentLists>
                             {
                                 CommentList.length >= 5 ?
                                     <Link to={`/comment/${id}?typeId=1`} className="moreComment">
