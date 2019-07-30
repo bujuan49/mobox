@@ -12,7 +12,7 @@ class Home extends React.Component {
         
     }
     componentDidMount(){
-        console.log("home component")
+      //  console.log("home component")
         this.time=setInterval(()=>{
             this.props.loading.changeLoading(!this.props.loading.isLoading)
         },3000);

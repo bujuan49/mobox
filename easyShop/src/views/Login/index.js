@@ -13,15 +13,15 @@ class Login extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
-          if (values.user!==""&&values.password!=="") {
+          if (values.user!== ""&&values.password!=="") {
             console.log('Received values of form:', values);
             this.props.login.submitFrom({
                 mobile:values.user,
                 password:values.password
             })
-            if(this.props.login.code==0){
+            if(this.props.login.code===0){
                 this.props.history.push("/home/hompage")
-            }else if(this.props.login.code==1000){
+            }else if(this.props.login.code===1000){
                 this.props.history.push("/login")
             }
           }

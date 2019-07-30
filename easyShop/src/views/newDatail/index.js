@@ -31,15 +31,15 @@ import {Carousel,Icon} from "antd"
                       </Carousel>
                       <ul className={style.serviceList}>
                           <li>
-                              <span>⭐</span>
+                              <span role='img'>⭐</span>
                               30天无忧退货
                           </li>
                           <li>
-                              <span>⭐</span>
+                              <span role='img'>⭐</span>
                               48小时快速退款
                           </li>
                           <li>
-                              <span>⭐</span>
+                              <span role='img'>⭐</span>
                               满88元免邮费
                           </li>
                       </ul>

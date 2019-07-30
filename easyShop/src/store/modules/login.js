@@ -8,7 +8,7 @@ export default class Login{
         login(payload).then(res=>{
             console.log(res)
             this.code=res.errno
-            if(res.data.errno==0){
+            if(res.data.errno===0){
                 setToken(res.data.sessionKey) 
             }
             

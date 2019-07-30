@@ -10,13 +10,13 @@ class mine extends React.Component {
                 type: 'folder-open',
                 name: '我的收藏',
                 theme:'twoTone',
-                link: '/collect'
+                to: '/collect'
               },
               {
                 type:'environment' ,
                 name: '地址管理',
                 theme:'twoTone',
-                link: '/address'
+                to: '/address'
               },
               {
                 type:'profile',
@@ -61,6 +61,11 @@ class mine extends React.Component {
             ]
           }
     }
+    manager(item){
+      if('to' in item){
+        this.props.history.push(item.to)
+      }
+    }
     render() {
        return (
             <React.Fragment>
@@ -75,10 +80,11 @@ class mine extends React.Component {
                     <div className="userPower">
                     {
                         this.state.userPower.map((item) => (
-                        <div key={item.name} >
+                        <div key={item.name} style={'to' in item?{color:'#2196f3'}:{}} onClick={()=>this.manager(item)}>
                         <Icon type={item.type} theme={item.theme}/>
                             <div>{item.name}</div>
-                        </div>)
+                        </div>
+                        )
                         )
                     }
                     </div>

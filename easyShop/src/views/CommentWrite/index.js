@@ -35,10 +35,11 @@ import './comment.scss'
   render() {
     const { areaMaxLen, content} = this.state;
 const {Comments}=this.props.special;
-if(Comments.errno===401){
-  this.props.history.push(`/login`)
-
-}
+// if(Comments.errno===401){
+//   this.props.history.push(`/login`)
+// }else{
+//   this.props.history.go(-1)
+// }
 //  //   console.log(comments)
 //     console.log(this.props.special);
     return (
