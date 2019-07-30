@@ -4,7 +4,7 @@ import GoodFoot from '../../../components/goods/goods'
 import Swiper from 'swiper'
 import './goods.scss'
 import { inject, observer } from 'mobx-react'
-@inject('goods')
+@inject('goods', 'car')
 @observer
 class goods extends Component {
     constructor(props) {
@@ -16,6 +16,7 @@ class goods extends Component {
     componentDidMount() {
         this.props.goods.goods_date_fun(this.props.history.location.pathname.slice(7))
         this.props.goods.related_shop(this.props.history.location.pathname.slice(7))
+        this.props.goods.count(this.props.history.location.pathname.slice(7))
         new Swiper(".goods_banner", {
             loop: true,
             pagination: {
@@ -31,7 +32,7 @@ class goods extends Component {
         this.setState({ flag: 'none' })
     }
     render() {
-        const { goods_date_swiper, goods_date_name, related_shop_related } = this.props.goods
+        const { goods_date_swiper, goods_date_name, related_shop_related, goods_count } = this.props.goods
         return (
             <div className='goods_wrap'>
                 <Header title={goods_date_name.goods_brief} t={this.state.flag}></Header>
@@ -57,7 +58,7 @@ class goods extends Component {
                         <div className="goodsNameSubTitle">{goods_date_name.goods_brief}</div>
                         <div className="goodsPriceTitle">￥{goods_date_name.retail_price}</div>
                     </div>
-                    <div className="goods_Size" onClick={() => this.specif()}><div></div><div>x 0</div><div>选择规格<i className="iconfont icon-right"></i></div></div>
+                    <div className="goods_Size" onClick={() => this.specif()}><div></div><div>x {goods_date_name.add_time}</div><div>选择规格<i className="iconfont icon-right"></i></div></div>
                     <div className="goods_Attribute"><div className="goodsAttributeLine">-- 商品参数 --</div></div>
                     <div className="goods_main_img" dangerouslySetInnerHTML={{ __html: goods_date_name.goods_date_name }}>
                         {/* 多余的图片 */}
@@ -109,8 +110,8 @@ class goods extends Component {
                     <div className='dock'>
                         <div className="goodsSizeSetMsg">
                             <div className="gooodsSizePriceAndSize">
-                                <div>单价: <span>￥69</span></div>
-                                <div>库存: <span>100件</span></div>
+                                <div>单价: <span>￥{goods_date_name.retail_price}</span></div>
+                                <div>库存: <span>{goods_count}件</span></div>
                                 <div>已选择: </div>
                             </div>
                             <div className="closeModel">
@@ -120,9 +121,9 @@ class goods extends Component {
                         <div className="goodsSizeItem">
                             <div className="goodsSizeItemName">数量</div>
                             <div className="goodsBuyCount">
-                                <div className="onePx_border">-</div>
-                                <div className="onePx_border">0</div>
-                                <div className="onePx_border">+</div>
+                                <div className="onePx_border" onClick={() => this.props.car.del(goods_date_name)}>-</div>
+                                <div className="onePx_border">{goods_date_name.add_time}</div>
+                                <div className="onePx_border" onClick={() => this.props.car.add(goods_date_name)}>+</div>
                             </div>
                         </div>
                         <div className="goodsDoWrap">

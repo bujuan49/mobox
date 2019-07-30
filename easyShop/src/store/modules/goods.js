@@ -1,5 +1,5 @@
 import { observable, action } from "mobx";
-import { goods_date, related, addordelete, helper, list } from '../../server/index'
+import { goods_date, related, addordelete, helper, list, count } from '../../server/index'
 export default class Goods {
     // @observable 修饰属性
     @observable goods_date = '';
@@ -8,6 +8,7 @@ export default class Goods {
     @observable related_shop_related = ''
     @observable helper_xiala = ''
     @observable helper_list = ''
+    @observable goods_count = ''
     // @action 修饰方法
     @action goods_date_fun = async (parmase) => {
         const data = await goods_date(parmase)
@@ -29,6 +30,10 @@ export default class Goods {
     @action list = async (parmase) => {  //点击模糊出来的具体商品
         const data = await list(parmase)
         this.helper_list = data.data.categoryList
+    }
+    @action count = async (parmase) => {  //获取在售商品数量
+        const data = await count(parmase)
+        this.goods_count = data.data.goodsCount
     }
 }
 

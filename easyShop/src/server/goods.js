@@ -12,8 +12,11 @@ export function helper(parmase) {     //模糊搜索
     return request.get('/search/helper/?keyword=' + parmase)
 }
 export function list(parmase) {     //根据模糊搜索出来的页面数据
-    console.log(parmase)
     return request.get('/goods/list', { parmase })
 }
+export function count(parmase) {     //获取在售商品的数量
+    return request.get('/goods/count/?id=' + parmase)
+}
+
 
 
