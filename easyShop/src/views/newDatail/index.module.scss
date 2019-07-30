@@ -43,10 +43,16 @@ p{
             justify-content: center;
             align-items: center;
             li{
-                flex: 1 1;
+                flex: 1;
                 color: #666;
                 font-size: .24rem;
                 text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                span{
+                    color:red;
+                }
             }
         }
         .goodsMsgWrap{
@@ -155,15 +161,24 @@ p{
 .goodsAttribute{
     width: 100%;
     height:auto;
+    padding: 0.3rem;
     .goodsAttr{
-        background: #ccc;
-        height: 0.8rem;
+        background: #dcdfe6;
+        min-height: 0.8rem;
+        height: auto;
+        width: 100%;
         display: flex;
         align-items: center;
-        margin: 0.1rem 0;
-        span{
-            color:#dcdfe6;
+        margin: 0.1rem 0; 
+        p{
+           flex:1;
         }
+        span{
+            width:2rem;
+            padding: 0 0.1rem;
+            color:gray;
+        }
+
     }
 }
 .goodtitle{

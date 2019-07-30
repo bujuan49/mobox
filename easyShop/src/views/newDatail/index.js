@@ -2,7 +2,7 @@ import React from 'react';
 import {inject,observer} from "mobx-react"
 import style from "./index.module.scss"
 import {Carousel,Icon} from "antd"
-@inject("home")
+@inject("home","shop")
 @observer
  class newDatail extends React.Component {
     constructor(props) {
@@ -12,10 +12,11 @@ import {Carousel,Icon} from "antd"
     componentDidMount(){
         let detid=(this.props.location.pathname).slice(-7);
         this.props.home.newDatail({id:detid})
+        this.props.shop.getShopcont()
     }
     render() {
+        const {sum}= this.props.shop;
         const {newdatail}=this.props.home;
-        console.log(newdatail)
         return (
             <React.Fragment>
                 
@@ -31,15 +32,15 @@ import {Carousel,Icon} from "antd"
                       </Carousel>
                       <ul className={style.serviceList}>
                           <li>
-                              <span>⭐</span>
+                              <span role="img">★</span>
                               30天无忧退货
                           </li>
                           <li>
-                              <span>⭐</span>
+                              <span role="img">★</span>
                               48小时快速退款
                           </li>
                           <li>
-                              <span>⭐</span>
+                              <span role="img">★</span>
                               满88元免邮费
                           </li>
                       </ul>
@@ -56,7 +57,7 @@ import {Carousel,Icon} from "antd"
                           {
                             newdatail&&newdatail.attribute.map((item,i)=>
                                 <div className={style.goodsAttr} key={i}>
-                                    <span>{item.name}</span>{item.value}
+                                    <span>{item.name}</span><p>{item.value}</p>
                                 </div>
                             )
                           }
@@ -81,8 +82,8 @@ import {Carousel,Icon} from "antd"
                       </div>
                     </div>
                     <div className={style.footer}>
-                        <div className={style.isLike}>☆</div>
-                        <div className={style.cartNum}><Icon type="shopping-cart"style={{fontSize:"0.8rem"}}/><span>9</span></div>
+                        <span className={style.isLike} role="img">☆</span>
+                        <div className={style.cartNum}><Icon type="shopping-cart"style={{fontSize:"0.8rem"}} onClick={()=>this.props.history.push({pathname:"/home/shop"})}/><span>{sum&&sum}</span></div>
                         <div className={style.addCart}>加入购物车</div><div className={style.payGoods}>立即购买</div>
                     </div>
                 </div>

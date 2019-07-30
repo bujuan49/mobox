@@ -1,6 +1,5 @@
 import React from 'react';
 import {inject,observer} from "mobx-react"
-import Item from 'antd/lib/list/Item';
 import {Icon} from "antd"
 import "./manuf.scss"
 @inject("home")
@@ -16,7 +15,6 @@ class Manufacturer extends React.Component {
     }
     render() {
         const {detailData}=this.props.home;
-        console.log()
         return (
             <React.Fragment>
                 <div>

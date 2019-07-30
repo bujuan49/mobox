@@ -1,0 +1,93 @@
+.shopwrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .serviceList{
+        height: .8rem;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li{
+            flex: 1;
+            color: #666;
+            font-size: .24rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span{
+                color:red;
+            }
+        }
+    }
+    .shop_content{
+        width: 100%;
+        flex:1;
+        .shop_box{
+            width: 100%;
+            height: 2rem;
+            display: flex;
+            justify-content: space-between;
+            padding: 0.05rem 0.1rem;
+            align-items: center;
+            div{
+                &:nth-child(1){
+                    img{
+                        width: 0.4rem;
+                        width: 0.4rem;
+                    }
+                }
+                &:nth-child(2){
+                    width: 1.8rem;
+                    background: #e5e5e5;
+                    img{
+                        width: 1.8rem;
+                        height: 1.8rem;
+                    }
+                }
+                &:nth-child(3){
+                    flex:1;
+                    height: 100%;
+                    align-items: center
+                }
+            }
+        }
+    }
+    .shop_price{
+        width: 100%;
+        height: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow:0 -3px 10px 0 rgba(0, 0, 0, 0.2);
+        .allCheckout{
+            padding:0 0.1rem;
+            img{
+                width: 0.4rem;
+                width: 0.4rem;
+            }
+        }
+        .cartCount{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            p{
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .cartAllBtn{
+            height: 100%;
+            background: #ab2b2b;
+            color: white;
+            padding: 0;
+            width: 2.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    }
+}

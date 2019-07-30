@@ -63,7 +63,7 @@ const route=[
         name:"新品详情"
     },
     {
-        to:"/home",
+        to:"/login",
         from:"/"
     }
 ]

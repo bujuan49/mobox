@@ -45,3 +45,4 @@ export const newDatail=loadable({
     loader:()=>import("../views/newDatail"),
     loading:Loading
 })
+
