@@ -51,14 +51,38 @@ import {Carousel,Icon} from "antd"
                       <div className={style.goodsSize}>
                           <div></div><div>x 0</div><div>选择规格<i className="iconfont icon-right"></i></div>
                       </div>
+                      <div className={style.goodsAttribute}>
+                        <div className={style.goodtitle}>--商品参数--</div>
+                          {
+                            newdatail&&newdatail.attribute.map((item,i)=>
+                                <div className={style.goodsAttr} key={i}>
+                                    <span>{item.name}</span>{item.value}
+                                </div>
+                            )
+                          }
+                      </div>
                       <div className={style.topicDetailImg}
                        dangerouslySetInnerHTML={{__html:newdatail&&newdatail.info.goods_desc}}
                        >
                       </div>
+                      <div className={style.goodsAttribute}>
+                          <div className={style.goodtitle}>--常见问题--</div>
+                          {
+                            newdatail&&newdatail.issue.map(item=>
+                                <div key={item.id}>
+                                    <div>
+                                        <h4><span style={{color:"red"}}>√</span>{item.question}</h4>
+                                        <p>{item.answer}</p>
+                                    </div>
+                                </div>
+                                
+                            )
+                          }
+                      </div>
                     </div>
                     <div className={style.footer}>
                         <div className={style.isLike}>☆</div>
-                        <div className={style.cartNum}><i className="iconfont icon-Add-Cart"><span>9</span></i></div>
+                        <div className={style.cartNum}><Icon type="shopping-cart"style={{fontSize:"0.8rem"}}/><span>9</span></div>
                         <div className={style.addCart}>加入购物车</div><div className={style.payGoods}>立即购买</div>
                     </div>
                 </div>

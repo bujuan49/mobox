@@ -1,3 +1,7 @@
+p{
+    margin: 0;
+    padding: 0;
+}
 .wrap{
     width: 100%;
     height: 100%;
@@ -88,13 +92,6 @@
             height: auto;
             margin: 0;
             padding: 0;
-            p{
-                display: block;
-                margin-block-start: 1em;
-                margin-block-end: 1em;
-                margin-inline-start: 0px;
-                margin-inline-end: 0px;
-            }
             img{
                 width: 100%;
                 height: auto;
@@ -112,7 +109,7 @@
         background: white;
         box-shadow: 0 -3px 10px 0 rgba(0, 0, 0, 0.2);
         display: flex; 
-        justify-content: space-between;
+        justify-content:center;
         .isLike{
             line-height: .98rem;
             font-size: .6rem;
@@ -120,28 +117,60 @@
             font-weight: bolder;
         }
         .cartNum{
+            flex:1;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #2196f3;
-            .addCart{
-                width: 30%;
-                height: 100%;
-                line-height: .98rem;
-                text-align: center;
-                font-size: .3rem;
-                color: white;
-                background: linear-gradient(90deg, #ff9500, #ff5e3a);
-            }
-            .payGoods{
-                width: 30%;
-                height: 100%;
-                line-height: .98rem;
-                text-align: center;
-                font-size: .3rem;
-                color: white;
-                background: linear-gradient(90deg, #1d62f0, #19d5fd);
+            .iconbox{
+                width:2em;
             }
         }
+        .addCart{
+            width: 30%;
+            height: 100%;
+            line-height: .98rem;
+            text-align: center;
+            font-size: .3rem;
+            color: white;
+            background: linear-gradient(90deg, #ff9500, #ff5e3a);
+        }
+        .payGoods{
+            width: 30%;
+            height: 100%;
+            line-height: .98rem;
+            text-align: center;
+            font-size: .3rem;
+            color: white;
+            background: linear-gradient(90deg, #1d62f0, #19d5fd);
+        }
     }
+}
+.goodsAttribute{
+    width: 100%;
+    height: auto;
+    padding: 0 0.4rem;
+    
+}
+.goodsAttribute{
+    width: 100%;
+    height:auto;
+    .goodsAttr{
+        background: #ccc;
+        height: 0.8rem;
+        display: flex;
+        align-items: center;
+        margin: 0.1rem 0;
+        span{
+            color:#dcdfe6;
+        }
+    }
+}
+.goodtitle{
+    width: 100%;
+    height: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#2196f3;
 }

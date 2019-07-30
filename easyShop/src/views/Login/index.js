@@ -14,14 +14,22 @@ class Login extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
           if (values.user!==""&&values.password!=="") {
-            console.log('Received values of form: ', values);
+            console.log('Received values of form:', values);
             this.props.login.submitFrom({
                 mobile:values.user,
                 password:values.password
             })
+            if(this.props.login.code==0){
+                this.props.history.push("/home/hompage")
+            }else if(this.props.login.code==1000){
+                this.props.history.push("/login")
+            }
           }
         });
       };
+      componentDidMount(){
+          
+      }
     render() {
         //console.log(this.props.login.submitFrom)
         const { getFieldDecorator } = this.props.form;

@@ -80,7 +80,7 @@ class homepage extends React.Component {
                     <div className="hotbox">
                         {
                            hotGoodsList&&hotGoodsList.map(item=>
-                            <div className="hotcon" key={item.id}>
+                            <div className="hotcon" key={item.id} onClick={()=>this.props.history.push({pathname:"/newDatail/"+item.id})}>
                                 <div><img src={item.list_pic_url} alt=""/></div>
                                 <div>
                                     <h4>{item.name}</h4>
@@ -123,7 +123,7 @@ class homepage extends React.Component {
                                 <div className="newGood_box">
                                     {
                                         item.goodsList.map(item=>
-                                            <div className="sp_box" key={item.id}>
+                                            <div className="sp_box" key={item.id} onClick={()=>this.props.history.push({pathname:"/newDatail/"+item.id})}>
                                                 <img src={item.list_pic_url} alt=""/>
                                                 <p>{item.name}</p>
                                                 <h6>￥{item.retail_price}</h6>
