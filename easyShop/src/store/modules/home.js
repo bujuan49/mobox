@@ -22,9 +22,6 @@ export default class Home{
     //新品详情
     @observable newdatail=null;
     // @action 修饰方法
-    @action changeCount(type){
-        type==='+'? this.count++: this.count--;
-    }
     @action getallData(){
         alldata().then(res=>{
             console.log("16res...",res.data)

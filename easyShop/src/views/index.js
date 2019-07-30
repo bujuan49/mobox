@@ -45,3 +45,15 @@ export const newDatail=loadable({
     loader:()=>import("../views/newDatail"),
     loading:Loading
 })
+export const CommentWrite=loadable({
+    loader:()=>import("../views/CommentWrite"),
+    loading:Loading
+})
+export const Comment=loadable({
+    loader:()=>import("../views/Comment"),
+    loading:Loading
+})
+export const Collect=loadable({
+    loader:()=>import("../views/Collect"),
+    loading:Loading
+})
