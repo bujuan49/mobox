@@ -1,0 +1,74 @@
+.my_main {
+  width: 100%;
+  height: 100%;
+  font-size: 0.3rem;
+  display: flex;
+  flex-direction: column;
+}
+.my_userMsgs {
+  width: 100%;
+  height: 2rem;
+  background: rgb(221, 189, 129);
+  display: flex;
+  h6 {
+    height: 2rem;
+  }
+  .img {
+    width: 1.2rem;
+    height: 100%;
+    margin-left: 0.3rem;
+    line-height: pxTorem(130px);
+    h6 {
+      height: 2rem;
+    }
+    h5 {
+      width: 100%;
+      height: 0.6rem;
+      border-radius: 50%;
+      background: rgb(192, 207, 213);
+    }
+  }
+}
+.my_info {
+  width: 50%;
+  height: 50%;
+  margin-left: 5%;
+  span {
+    display: block;
+    line-height: pxTorem(30px);
+    color: white;
+  }
+  span:nth-child(1) {
+    margin-top: 22%;
+  }
+}
+.my_userPower {
+  display: flex;
+  flex-wrap: wrap;
+  & > div {
+    width: 33%;
+    height: 2.3rem;
+    background: white;
+    border: 0.5px solid gainsboro;
+    i {
+      display: block;
+      padding-top: 0.8rem;
+      padding-bottom: 0.2rem;
+      text-align: center;
+      font-size: 0.4rem;
+      color: #9e9e9e;
+    }
+    div {
+      text-align: center;
+      font-size: 0.2rem;
+    }
+  }
+}
+.my_out {
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  color: #777;
+  font-size: pxTorem(16px);
+}

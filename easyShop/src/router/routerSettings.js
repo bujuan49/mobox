@@ -1,4 +1,4 @@
-import { home, classify, login, categorys, search, goods } from "./login/index"
+import { home, classify, login, categorys, search, goods,my,shopcar } from "./login/index"
 
 const routes = [
     {
@@ -22,9 +22,18 @@ const routes = [
         Component: search
     },
     {
+        path: '/shopcar',
+        Component: shopcar
+    },
+    {
+        path:'/my',
+        Component: my
+    },
+    {
         path: "/goods/:id",
         Component: goods
     },
+
     {
         path: '/',
         redirect: '/home'

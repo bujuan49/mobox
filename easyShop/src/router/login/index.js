@@ -27,3 +27,11 @@ export const goods = loadable({   //添加去购物车页面
     loading: Loing,
     loader: () => import("../../views/classify/goods/goods")
 })
+export const shopcar = loadable({   //去购物车
+    loading: Loing,
+    loader: () => import("../../views/shopcar/shopcar")
+})
+export const my = loadable({   //我的
+    loading: Loing,
+    loader: () => import("../../views/my/my")
+})

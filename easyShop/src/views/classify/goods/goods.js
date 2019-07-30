@@ -104,11 +104,10 @@ class goods extends Component {
                                 </dl>
                             })
                         }
-
                     </div>
                 </div>
                 {/* 缺少点击出现下面购物车的一步 */}
-                <GoodFoot shopping={goods_date_name}></GoodFoot>
+                <GoodFoot shopping={this.state.flag}></GoodFoot>
                 {/* 点击出现弹框 */}
                 <div className="goodsSizeDo" style={{ display: this.state.flag }}>
                     <div className='dock'>

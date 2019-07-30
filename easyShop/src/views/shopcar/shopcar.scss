@@ -1,0 +1,131 @@
+.car_wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.3rem;
+}
+
+.car_cart {
+  padding: 0.8rem 0 1.1rem 0;
+}
+.car_foot {
+  position: fixed;
+  bottom: 1rem;
+  height: 1.1rem;
+  left: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  box-shadow: 0 -3px 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+.car_header {
+  width: 100%;
+  height: 0.8rem;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  li {
+    flex: 1 1;
+    color: #666;
+    font-size: 0.24rem;
+    text-align: center;
+    span {
+      color: red;
+      margin-right: 0.15rem;
+      font-size: 0.3rem;
+    }
+  }
+}
+.car_main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.cartGoodsDo {
+  font-size: 0.3rem;
+  position: fixed;
+  bottom: 1rem;
+  height: 1.1rem;
+  left: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  box-shadow: 0 -3px 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  .isCheckItem {
+    flex-shrink: 0;
+    width: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cartMsgAll {
+    flex: 1 1;
+    line-height: 1.1rem;
+    font-size: 0.3rem;
+  }
+  .cartAllDoButton {
+    width: auto;
+    padding: 0 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cartAllDoButton.pay {
+    background: #ab2b2b;
+    color: white;
+    padding: 0;
+    width: 2.6rem;
+  }
+}
+.cartGoodsItem {
+  flex-shrink: none;
+  display: flex;
+  height: 2.2rem;
+  padding: 0.2rem;
+  padding-left: 0;
+  background: white;
+  margin-top: 1px;
+  .isCheckItem {
+    width: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .goodsImg {
+    width: 1.8rem;
+    background: #f4f4f4;
+    img {
+      width: 100%;
+      height: 1.8rem;
+    }
+  }
+  .cartGoodsMsg {
+    flex: 1 1;
+    padding: 0 0.1rem;
+    min-width: 0;
+    div {
+      height: 33.333%;
+      display: flex;
+      align-items: center;
+      font-size: 0.28rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .cartGoodsNum {
+    width: auto;
+  }
+}
+.radius {
+  width: 0.4rem;
+  height: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
