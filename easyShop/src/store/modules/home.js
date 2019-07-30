@@ -18,10 +18,6 @@ export default class Home{
     //专题数据
     @observable topicList=[];
     // @action 修饰方法
-    @action changeCount(type){
-        console.log('type...', type);
-        type==='+'? this.count++: this.count--;
-    }
     @action getallData(){
         alldata().then(res=>{
             console.log("16res...",res.data)

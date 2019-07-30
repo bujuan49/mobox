@@ -1,10 +1,10 @@
 import React from 'react';
 import {inject,observer} from "mobx-react"
 import "./login.scss"
-
 import {Form,Input,Icon,Checkbox,Button} from "antd"
 @inject("login")
 @observer
+
 class Login extends React.Component {
     constructor(props) {
         super(props);
