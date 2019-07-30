@@ -58,7 +58,7 @@ class Sdetail extends React.Component {
                               </div>
 
                         </div>
-                        <div className="specalbox">
+                        <div className="specalboxs">
                       {
                           SpecialList&&SpecialList.map(item=>
                             <div className='special' key={item.id} onClick={()=>this.sdetail(item.id)}>
