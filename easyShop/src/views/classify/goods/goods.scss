@@ -166,7 +166,7 @@ img {
   margin-right: 0.1rem;
 }
 .categorys_box {
-  flex: 1;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
@@ -192,7 +192,6 @@ img {
 }
 
 .goodsSizeDo {
-
   position: fixed;
   top: 0;
   right: 0;
