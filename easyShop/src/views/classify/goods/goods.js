@@ -25,6 +25,9 @@ class goods extends Component {
             autoplay: true
         });
     }
+    componentWillReceiveProps() {
+        this.props.goods.goods_date_fun(this.props.history.location.pathname.slice(7))
+    }
     specif = () => {     //点击出现弹框 
         this.setState({ flag: '' })
     }
@@ -50,8 +53,8 @@ class goods extends Component {
                     </div>
                     <ul className="goods_title">
                         <li><span>★</span>30天无忧退货</li>
-                        <li><span>★</span>30天无忧退货</li>
-                        <li><span>★</span>30天无忧退货</li>
+                        <li><span>★</span>7天无理由退货</li>
+                        <li><span>★</span>一年保修</li>
                     </ul>
                     <div className="goods_Masg">
                         <div className="goodsNameTitle">{goods_date_name.name}</div>
@@ -90,7 +93,7 @@ class goods extends Component {
                     <div className="categorys_box">
                         {
                             related_shop_related && related_shop_related.map(item => {
-                                return <dl key={item.id}>
+                                return <dl onClick={() => this.props.history.push('/goods/' + item.id)} key={item.id}>
                                     <dt>
                                         <img src={item.list_pic_url} alt="" />
                                     </dt>
@@ -104,6 +107,7 @@ class goods extends Component {
 
                     </div>
                 </div>
+                {/* 缺少点击出现下面购物车的一步 */}
                 <GoodFoot shopping={goods_date_name}></GoodFoot>
                 {/* 点击出现弹框 */}
                 <div className="goodsSizeDo" style={{ display: this.state.flag }}>
