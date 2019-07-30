@@ -35,3 +35,8 @@ export const my = loadable({   //我的
     loading: Loing,
     loader: () => import("../../views/my/my")
 })
+export const special = loadable({   //我的
+    loading: Loing,
+    loader: () => import("../../views/special/special")
+})
+
