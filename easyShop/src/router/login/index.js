@@ -39,4 +39,12 @@ export const special = loadable({   //我的
     loading: Loing,
     loader: () => import("../../views/special/special")
 })
+export const Sdetail = loadable({   //我的
+    loading: Loing,
+    loader: () => import("../../views/special/detail/detail")
+})
+
+
+
+
 
