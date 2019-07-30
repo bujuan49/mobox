@@ -1,5 +1,4 @@
-import {Home,Login,Homepage,Specal,Classfiy,Shop,Mine,Manufacturer,Sdetail,CommentWrite,Comment} from "../views/index"
-
+import {Home,Login,Homepage,Specal,Classfiy,Shop,Mine,Manufacturer,Sdetail,CommentWrite,Comment,Collect} from "../views/index"
 const route=[
     {
         path:"/home",
@@ -50,8 +49,12 @@ const route=[
         path:"/login",
         component:Login,
         name:'登录'
-    }
-    ,
+    },
+    {
+        path:"/collect",
+        component:Collect,
+        name:'收藏'
+    },
     {
       path:'/sdetail/:id'  ,
       component:Sdetail,

@@ -4,6 +4,7 @@ import {Icon} from 'antd'
 import "./sdetail.scss"
 import CommentLists from '../../components/CommentList'
 import {Link} from 'react-router-dom'
+
 @inject('special')
 @observer
 //专题详情
@@ -16,6 +17,7 @@ class Sdetail extends React.Component {
       this.props.history.go(-1)
     }
     goSpecial(id){
+      //刷新页面
      window.location.reload();
      this.props.history.push(`/Sdetail/${id}`);
    }

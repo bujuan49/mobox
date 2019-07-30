@@ -49,3 +49,7 @@ export const Comment=loadable({
     loader:()=>import("../views/Comment"),
     loading:Loading
 })
+export const Collect=loadable({
+    loader:()=>import("../views/Collect"),
+    loading:Loading
+})
