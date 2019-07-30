@@ -13,4 +13,5 @@ export default class loding extends Component {
             </div>
         )
     }
+
 }

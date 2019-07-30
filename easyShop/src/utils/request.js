@@ -1,6 +1,6 @@
 import axios from 'axios'
-
 // create an axios instance
+import { getToken } from './index.js'
 const service = axios.create({
   baseURL: 'http://169.254.12.49:8888',
   // withCredentials: true, // 跨域请求时发送 cookies
@@ -9,18 +9,17 @@ const service = axios.create({
 // request interceptor
 service.interceptors.request.use(
   config => {
-    // 判断是否有登陆态
-    // if (getToken()) {
-    //   // 让每个请求携带authorization
-    //   config.headers['authorization'] = getToken()
-    // }
+
+    if (getToken()) {
+      // 让每个请求携带authorization
+      config.headers['authorization'] = getToken()
+    }
     return config
   },
   error => {
     return Promise.reject(error)
   }
 )
-
 // response interceptor
 service.interceptors.response.use(
   response => response.data,

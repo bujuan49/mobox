@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import './login.scss'
+import { inject, observer } from 'mobx-react'
+@inject('login')
+@observer
 class Login extends Component {
     state = {
         phoneValue: "",
@@ -35,7 +38,12 @@ class Login extends Component {
         let { phoneValue, passVlue } = this.state
         let yan = /^1[3456789]\d{9}$/
         if (yan.test(phoneValue.trim()) && passVlue.trim() !== "") {
-            this.props.history.push('/home')
+            // this.props.history.push('/home')
+            this.props.login.login({
+                mobile: this.state.phoneValue,
+                password: this.state.passVlue
+            })
+
         } else {
             alert("")
         }
