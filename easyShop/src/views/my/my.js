@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './my.scss';
 import { inject, observer } from "mobx-react";
 import Footer from '../../components/footer/footer'
-// @inject("my")
+@inject("my")
 @observer
 
 class my extends Component {

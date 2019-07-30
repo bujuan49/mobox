@@ -6,7 +6,15 @@ export default class List {
     @observable login = '';
     // @action 修饰方法
     @action login = async (parmase) => {
+        window.localStorage.setItem('user', parmase.mobile)
         const data = await login(parmase)
-        setToken(data.data.sessionKey)
+        console.log(data)
+        if (data.errno === 0) {
+            setToken(data.data.sessionKey)
+            // this.props.history.push('/home')
+        } else {
+            alert('登录失败')
+        }
+
     }
 }
