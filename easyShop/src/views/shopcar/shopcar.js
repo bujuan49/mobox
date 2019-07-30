@@ -21,7 +21,7 @@ class shopcar extends Component {
 
                     <div className="cartGoodsItem">
                         <div className="isCheckItem">
-                            <p className='radius'></p>
+                            <p className='radius'>√</p>
                         </div>
                         <div className="goodsImg"></div>
                         <div className="cartGoodsMsg">
