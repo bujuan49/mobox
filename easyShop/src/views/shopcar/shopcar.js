@@ -8,10 +8,13 @@ class shopcar extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
         }
     }
+    componentDidMount() {
+        this.props.car.cartIndex()
+    }
     render() {
+        const { shopping, money } = this.props.car
         return (
             <div className="car_wrap">
                 <div className="car_header">
@@ -19,50 +22,28 @@ class shopcar extends Component {
                 </div>
                 <div className='car_main'>
 
-                    <div className="cartGoodsItem">
-                        <div className="isCheckItem">
-                            <p className='radius'>√</p>
-                        </div>
-                        <div className="goodsImg"></div>
-                        <div className="cartGoodsMsg">
-                            <div>简约知性记忆棉坐垫</div>
-                            <div></div>
-                            <div style={{ color: 'red' }}>￥46</div>
-                        </div>
-                        <div className="cartGoodsNum">x4</div>
-                    </div>
-
-                    <div className="cartGoodsItem">
-                        <div className="isCheckItem">
-                        <p className='radius'></p>
-                        </div>
-                        <div className="goodsImg"></div>
-                        <div className="cartGoodsMsg">
-                            <div>简约知性记忆棉坐垫</div>
-                            <div></div>
-                            <div style={{ color: 'red' }}>￥46</div>
-                        </div>
-                        <div className="cartGoodsNum">x4</div>
-                    </div>
-
-                    <div className="cartGoodsItem">
-                        <div className="isCheckItem">
-                        <p className='radius'></p>
-                        </div>
-                        <div className="goodsImg"></div>
-                        <div className="cartGoodsMsg">
-                            <div>简约知性记忆棉坐垫</div>
-                            <div></div>
-                            <div style={{ color: 'red' }}>￥46</div>
-                        </div>
-                        <div className="cartGoodsNum">x4</div>
-                    </div>
-
-                    
+                    {
+                        shopping && shopping.map(item => {
+                            return <div className="cartGoodsItem" key={item.id}>
+                                <div className="isCheckItem">
+                                    <p className='radius'>√</p>
+                                </div>
+                                <div className="goodsImg">
+                                    <img src={item.list_pic_url} alt="" />
+                                </div>
+                                <div className="cartGoodsMsg">
+                                    <div>{item.goods_name}</div>
+                                    <div></div>
+                                    <div style={{ color: 'red' }}>￥{item.retail_price}</div>
+                                </div>
+                                <div className="cartGoodsNum">x{item.number}</div>
+                            </div>
+                        })
+                    }
                 </div>
                 <div className="cartGoodsDo">
                     <div className="isCheckItem"> </div>
-                    <div className="cartMsgAll">已选(0)  ￥0</div>
+                    <div className="cartMsgAll">已选{money && money.checkedGoodsCount}  ￥{money && money.checkedGoodsAmount}</div>
                     <div className="cartAllDoButton">编辑</div>
                     <div className="cartAllDoButton pay">下单</div>
                 </div>

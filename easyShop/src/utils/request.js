@@ -9,10 +9,9 @@ const service = axios.create({
 // request interceptor
 service.interceptors.request.use(
   config => {
-
     if (getToken()) {
       // 让每个请求携带authorization
-      config.headers['authorization'] = getToken()
+      config.headers['x-nideshop-token'] = getToken()
     }
     return config
   },

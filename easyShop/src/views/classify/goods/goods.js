@@ -22,7 +22,7 @@ class goods extends Component {
             pagination: {
                 el: '.swiper-pagination',
             },
-            autoplay: true  
+            autoplay: true
         });
     }
     componentWillReceiveProps() {
@@ -34,6 +34,7 @@ class goods extends Component {
     close = () => {     //点击消失弹框
         this.setState({ flag: 'none' })
     }
+
     render() {
         const { goods_date_swiper, goods_date_name, related_shop_related, goods_count } = this.props.goods
         return (
@@ -130,7 +131,7 @@ class goods extends Component {
                             </div>
                         </div>
                         <div className="goodsDoWrap">
-                            <div>加入购物车</div>
+                            <div onClick={() => this.tianjia()}>加入购物车</div>
                             <div>立即下单</div>
                         </div>
                     </div>

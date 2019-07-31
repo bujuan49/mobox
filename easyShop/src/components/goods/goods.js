@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './goods.scss'
 import { inject, observer } from 'mobx-react'
-import PropTypes from 'prop-types'
 import { withRouter } from 'react-router-dom'
 
 @inject('goods')

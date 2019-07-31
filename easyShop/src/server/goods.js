@@ -20,6 +20,10 @@ export function count(parmase) {     //获取在售商品的数量
 // export function count(parmase) {     //获取在售商品的数量
 //     return request.get('/goods/count/?id=' + parmase)
 // }
+export function cartIndex(parmase) {     //获取在售商品的数量
+    return request.get('/cart/index')
+}
+
 
 
 

@@ -1,5 +1,5 @@
 import Cookie from 'js-cookie';
-const key = 'sessionKey'
+const key = 'x-nideshop-token'
 // 设置cookie, 过期时间为十个小时
 export function setToken(val) {
     let date = new Date();

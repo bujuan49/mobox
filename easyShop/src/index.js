@@ -7,6 +7,7 @@ import Home from './views/index' //引入主页面
 import './static/scss/common.scss'//引入scss
 import './static/font/iconfont.css'
 import './static/font1/iconfont.css'
+import 'antd-mobile/dist/antd-mobile.css';
 ReactDOM.render(<Provider {...store} >
      <Home />
 </Provider>, document.getElementById('root'));
