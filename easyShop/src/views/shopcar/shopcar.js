@@ -14,9 +14,7 @@ class shopcar extends Component {
     componentDidMount() {
         this.props.car.cartIndex()
     }
-    check = (item) => {
-        console.log(item)
-    }
+
     render() {
         const { shopping, money } = this.props.car
         return (
@@ -29,7 +27,7 @@ class shopcar extends Component {
                         this.state.flag ? shopping && shopping.map(item => {
                             return <div className="cartGoodsItem" key={item.id}>
                                 <div className="isCheckItem">
-                                    <span onClick={() => this.check(item)} className={item.checked ? 'radius check' : 'radius active_sh'}></span>
+                                    <span onClick={() => this.props.car.check(item)} className={item.checked ? 'radius check' : 'radius active_sh'}></span>
                                 </div>
                                 <div className="goodsImg">
                                     <img src={item.list_pic_url} alt="" />
@@ -44,7 +42,7 @@ class shopcar extends Component {
                         }) : shopping && shopping.map(item => {
                             return <div className="cartGoodsItem" key={item.id}>
                                 <div className="isCheckItem">
-                                    <span onClick={() => this.check(item)} className={item.checked ? 'radius check' : 'radius active_sh'}>√</span>
+                                    <span onClick={() => this.props.car.check(item)} className={item.checked ? 'radius check' : 'radius active_sh'}>√</span>
                                 </div>
                                 <div className="goodsImg">
                                     <img src={item.list_pic_url} alt="" />

@@ -5,7 +5,8 @@ export default class List {
     // @observable 修饰属性
     @observable shopping = null;
     @observable All = null;
-    @observable money = null
+    @observable money = null;
+    @observable number_zie = 0;
     // @action 修饰方法
     @action cartIndex = async () => {
         let date = await cartIndex()
@@ -24,10 +25,12 @@ export default class List {
         item.unit_price = item.retail_price * item.add_time
     }
     @action check = (item) => {        //当前是否选中
-        if (item.add_time > 1) {
-            item.add_time--
+        if (item.checked === 1) {
+            this.number_zie = item.checked
+        } else {
+
         }
-        item.unit_price = item.retail_price * item.add_time
+        console.log(item)
     }
 }
 
