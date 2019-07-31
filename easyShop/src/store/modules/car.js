@@ -4,36 +4,46 @@ import { cartIndex, addcar, checked } from '../../server/index'
 export default class List {
     // @observable 修饰属性
     @observable shopping = null; //购物车里所有的商品
-    @observable All = null;   //所有数据
+    @observable All = null;   //是否全选
     @observable money = null;
-    @observable number_zie = 0;
+    @observable numbers_Zie = null;
+
     // @action 修饰方法
     @action cartIndex = async () => {
         let date = await cartIndex()
         this.money = date.data.cartTotal
         this.shopping = date.data.cartList
     }
-    @action add = (item) => {       //点击数量改变之后    添加  
+    @action add = (item) => {       //点击数量改变之后添加  
         item.add_time++
         item.unit_price = item.retail_price * item.add_time
     }
-    @action del = (item) => {        //点击数量改变之后    减少
+    @action del = (item) => {        //点击数量改变之后减少
         if (item.add_time > 1) {
             item.add_time--
         }
         item.unit_price = item.retail_price * item.add_time
     }
-    @action addcar = async (parmas) => {   //添加到购物车  显示库存不足
-
-        let data = await addcar(parmas)
-        console.log(data)
+    @action addcar = async (parmas) => {   //添加到购物车
+        await addcar(parmas)
     }
-    @action checked_Shopping = async (parmas) => {
-        let data = await checked(parmas)
-        // this.checked_che = data.data.cartList.id
-        this.checked_che = data.data.cartList.map(item => item.checked)
-        console.log(this.checked_che)
+    @action select = async (parmas) => {
+        if (this.shopping[parmas].checked) {
+            this.shopping[parmas].checked = 0
+        } else {
+            this.shopping[parmas].checked = 1
+        }
+        console.log(this.shopping[parmas])
+        this.checked_Shopping({
+            isChecked: this.shopping[parmas].checked,
+            productIds: this.shopping[parmas].goods_id
+        })
+        this.All = this.shopping.every(item => item.checked)
 
+    }
+    @action checked_Shopping = async (parmas) => {  //是否选中
+        let data = await checked(parmas)
+        this.numbers_Zie = data.data.cartList
     }
 }
 

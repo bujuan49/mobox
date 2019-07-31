@@ -30,5 +30,8 @@ export function addcar(parmase) {     //添加到购物车
 export function checked(parmase) {     //是否选中
     return request.post('/cart/checked', parmase)
 }
+export function deletes (parmase) {     //是否删除
+    return request.post('/cart/delete', parmase)
+}
 
 

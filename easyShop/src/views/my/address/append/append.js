@@ -26,7 +26,6 @@ class append extends Component {
         this.props.address.save({
             id: '123',
             name: '耿增'
-
         })
     }
 
