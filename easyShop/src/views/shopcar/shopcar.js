@@ -8,6 +8,7 @@ class shopcar extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            flag: true
         }
     }
     componentDidMount() {
@@ -21,12 +22,11 @@ class shopcar extends Component {
                     <li><span>★</span>30天无忧退货</li><li><span>★</span>48小时快速退款</li><li><span>★</span>满88元免邮费</li>
                 </div>
                 <div className='car_main'>
-
                     {
-                        shopping && shopping.map(item => {
+                        this.state.flag ? shopping && shopping.map(item => {
                             return <div className="cartGoodsItem" key={item.id}>
                                 <div className="isCheckItem">
-                                    <p className='radius'>√</p>
+                                    <span className={item.checked ? 'radius check' : 'radius active_sh'}>√</span>
                                 </div>
                                 <div className="goodsImg">
                                     <img src={item.list_pic_url} alt="" />
@@ -37,6 +37,21 @@ class shopcar extends Component {
                                     <div style={{ color: 'red' }}>￥{item.retail_price}</div>
                                 </div>
                                 <div className="cartGoodsNum">x{item.number}</div>
+                            </div>
+                        }) : shopping && shopping.map(item => {
+                            return <div className="cartGoodsItem" key={item.id}>
+                                <div className="isCheckItem">
+                                    <span className={item.checked ? 'radius check' : 'radius active_sh'}>√</span>
+                                </div>
+                                <div className="goodsImg">
+                                    <img src={item.list_pic_url} alt="" />
+                                </div>
+                                <div className="cartGoodsMsg">
+                                    <div>{item.goods_name}</div>
+                                    <div></div>
+                                    <div style={{ color: 'red' }}>￥{item.retail_price}</div>
+                                </div>
+                                <div className='shop_box'><div className="countOp"><div>-</div><div>{item.number}</div><div>+</div></div></div>
                             </div>
                         })
                     }
