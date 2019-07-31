@@ -1,6 +1,5 @@
 import React from 'react';
 import {inject,observer} from "mobx-react"
-import Item from 'antd/lib/list/Item';
 import {Icon} from "antd"
 import "./manuf.scss"
 @inject("home")

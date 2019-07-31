@@ -1,59 +1,101 @@
 import React, { Component } from 'react'
-import { Form, Input,Checkbox } from 'antd';
+import {Checkbox,Picker, List } from 'antd-mobile';
+import { district } from 'antd-mobile-demo-data';
+import { createForm,formShape } from 'rc-form';
+import 'antd-mobile/dist/antd-mobile.css'
 import './add.scss'
+import {observer,inject} from 'mobx-react'
+const CheckboxItem = Checkbox.CheckboxItem;
+
+@inject('mine')
+@observer
 class Addaddress extends Component {
-    handleSubmit = e => {
-        e.preventDefault();
-        this.props.form.validateFields((err, values) => {
-          if (!err) {
-            console.log('Received values of form: ', values);
-          }
+  static propTypes = {
+    form: formShape,
+  };
+      constructor(props){
+          super(props)
+          this.state = {
+            value: null
+          };
+      }
+      closeDo = () => {
+      this.props.mine.flag=false
+      }
+      getSel() {
+        const value = this.state.pickerValue;
+        console.log(value)
+        if (!value) {
+          return '';
+        }
+      }
+      submit = () => { 
+      //   let {id}=this.props.match.params;
+        this.props.mine.getNewAdd({address: "", city_id: 37, district_id: 403,is_default: false,mobile: "15345678901",
+        name: "哈哈哈",
+        province_id: 2
         });
-      };
+        // this.props.mine.getAddress();
+      
+        this.props.form.validateFields((error, value) => {
+          console.log(error, value);
+        });
+      }
     render() {
-        const { getFieldDecorator } = this.props.form;
+      const { getFieldProps} = this.props.form;
+      const {addList}=this.props.mine;
+     // console.log(addList)
+     
+      let errors;
+       console.log(this.props.mine)
        return  <div className='add'>
                 <header>
                     <h5>新增地址</h5>
                 </header>
                 <section>
-                <Form onSubmit={this.handleSubmit} className="login-form">
-                    <Form.Item>
-                    {getFieldDecorator('username', {
-                        rules: [{ required: true, message: '姓名不能为空' }],
-                    })(
-                        <Input placeholder="姓名"/>,
-                    )}
-                   
-                  
-                    {getFieldDecorator('phone', {
-                        rules: [{ required: true, message: '电话号码不能为空' }],
-                    })(
-                        <Input placeholder="电话"/>,
-                    )}
-                    {getFieldDecorator('address', {
-                        rules: [{ required: true, message: '地址' }],
-                    })(
-                        <Input placeholder='北京/北京市/东城区'/>,
-                    )}
-                      {getFieldDecorator('detail', {
-                        rules: [{ required: true, message: '详细地址' }],
-                    })(
-                        <Input placeholder='详细地址'/>,
-                    )}
-                   </Form.Item>
-                    <Form.Item className='change'>
-                       默认地址<input type='checkbox' />
-                    </Form.Item>
-                </Form>
+                      <input {...getFieldProps('normal',{
+                        onChange(){}, // have to write original onChange here if you need
+                        rules: [{required: true}],
+                      })}  placeholder='姓名' 
+                      />
+                      <input {...getFieldProps('required', {
+                        onChange(){}, // have to write original onChange here if you need
+                        rules: [{required: true}],
+                      })}  placeholder='电话号码'/>
+                       <Picker 
+                              visible={this.state.visible}
+                              data={district}
+                              placeholder=' 北京/北京市/东城区'
+                              value={this.state.pickerValue}
+                              onChange={v => this.setState({ pickerValue: v })}
+                              onOk={() => this.setState({ visible: false })}
+                              onDismiss={() => this.setState({ visible: false })}
+                              >
+                              <List.Item {...getFieldProps('city',{
+                                getSel(){},
+                              rules: [{required: true}],
+                                       })}
+                              // extra={this.getSel()} 
+                               onClick={() => this.setState({ visible: true })}>
+                              </List.Item>
+                      </Picker>
+                      <input {...getFieldProps('address', {
+                        onChange(){}, // have to write original onChange here if you need
+                        rules: [{required: true}],
+                      })}  placeholder='详细地址'/>
+                      <div className='default'>
+                       <span>设置默认地址</span> <CheckboxItem/>
+                      </div>
+                      
+              
                 </section>
                 <div className='btns'>
-                          <button type="primary" className="login-form-no" >取消</button>
-                          <button type="primary" className="login-form-save" >保存</button>
+                      <button type="primary" className="login-form-no" onClick={()=>this.closeDo()}>取消</button>
+                      <button type="primary" className="login-form-save" onClick={this.submit}>保存</button>
                 </div>
             </div>
         
     }
 }
 
-export default Form.create()(Addaddress)
+export default createForm()(Addaddress)
