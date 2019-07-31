@@ -19,6 +19,7 @@ class Home extends React.Component {
         
     }
     componentWillUnmount(){
+        //console.log(this.myrefs)
         clearInterval(this.time)
     }
     render() {
@@ -31,7 +32,7 @@ class Home extends React.Component {
                    <div className="content">
                         {
                             this.props.children
-                        }
+                        }  
                    </div>
                    <div className="footer">
                        {

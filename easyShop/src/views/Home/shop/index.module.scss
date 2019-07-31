@@ -32,6 +32,9 @@
             justify-content: space-between;
             padding: 0.05rem 0.1rem;
             align-items: center;
+            p{
+                color:#ab2b2b;
+            }
             div{
                 &:nth-child(1){
                     img{
@@ -41,16 +44,23 @@
                 }
                 &:nth-child(2){
                     width: 1.8rem;
-                    background: #e5e5e5;
+                    
                     img{
                         width: 1.8rem;
                         height: 1.8rem;
+                        background: #e5e5e5;
                     }
                 }
                 &:nth-child(3){
                     flex:1;
                     height: 100%;
-                    align-items: center
+                    align-items: center;
+                    display: flex;
+                    justify-content: space-between;
+                    .number{width:0.4rem;}
+                }
+                .changeCount{
+                    display: flex;  
                 }
             }
         }

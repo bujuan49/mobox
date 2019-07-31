@@ -41,6 +41,7 @@ export default class Home{
     }
     @action newDatail= async(payload)=>{
         let data=await goodsdetail(payload)
+        console.log(data.data)
         this.newdatail=data.data
     }
 }
