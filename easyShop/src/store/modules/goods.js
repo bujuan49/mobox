@@ -15,6 +15,7 @@ export default class Goods {
         this.goods_date = data.data
         this.goods_date_swiper = data.data.gallery
         this.goods_date_name = data.data.info
+        this.goods_date_name_big = data.data
     }
     @action related_shop = async (parmase) => {
         const data = await related(parmase)

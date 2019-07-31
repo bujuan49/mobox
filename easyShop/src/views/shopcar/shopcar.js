@@ -8,17 +8,44 @@ class shopcar extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            flag: true
+            flag: true,
+            touch: false
         }
     }
     componentDidMount() {
         this.props.car.cartIndex()
     }
+    check = (item) => {
+        let number = item.checked === 1 ? 0 : 1;
+        console.log(number)
+        let obj = {
+            isChecked: number,
+            productIds: item.id
+        }
+        this.props.car.checked_Shopping(obj)
 
+        // console.log(this.props.car.checked_che)
+        // this.props.car.checked_che.id
+        // const list = this.props.car.checked_che && this.props.car.checked_che.map(item => (item.checked = !item.checked))
+        // console.log(list)
+        // let all = list && list.every(item => item.checked)
+        // this.setState({
+        //     flag: !all
+        // })
+    }
+    delData() {  //删除所选
+        // let delId = this.props.car.edit_All.map((item) => item.product_id).join(',')
+        // this.props.shoppingCart.del_All({productIds:delId})
+        this.setState({ flag: false })
+    }
     render() {
         const { shopping, money } = this.props.car
+
         return (
             <div className="car_wrap">
+                {
+                    console.log(shopping, '123123123')
+                }
                 <div className="car_header">
                     <li><span>★</span>30天无忧退货</li><li><span>★</span>48小时快速退款</li><li><span>★</span>满88元免邮费</li>
                 </div>
@@ -27,7 +54,7 @@ class shopcar extends Component {
                         this.state.flag ? shopping && shopping.map(item => {
                             return <div className="cartGoodsItem" key={item.id}>
                                 <div className="isCheckItem">
-                                    <span onClick={() => this.props.car.check(item)} className={item.checked ? 'radius check' : 'radius active_sh'}></span>
+                                    <span onClick={() => this.check(item)} className={item.checked ? 'radius check' : 'radius '}></span>
                                 </div>
                                 <div className="goodsImg">
                                     <img src={item.list_pic_url} alt="" />
@@ -42,7 +69,7 @@ class shopcar extends Component {
                         }) : shopping && shopping.map(item => {
                             return <div className="cartGoodsItem" key={item.id}>
                                 <div className="isCheckItem">
-                                    <span onClick={() => this.props.car.check(item)} className={item.checked ? 'radius check' : 'radius active_sh'}>√</span>
+                                    <span onClick={() => this.check(item)} className={item.checked ? 'radius check' : 'radius '}></span>
                                 </div>
                                 <div className="goodsImg">
                                     <img src={item.list_pic_url} alt="" />
@@ -60,8 +87,14 @@ class shopcar extends Component {
                 <div className="cartGoodsDo">
                     <div className="isCheckItem"> </div>
                     <div className="cartMsgAll">已选{money && money.checkedGoodsCount}￥{money && money.checkedGoodsAmount}</div>
-                    <div className="cartAllDoButton">编辑</div>
-                    <div className="cartAllDoButton pay">下单</div>
+
+                    {
+                        this.state.touch ? <span className="cartAllDoButton" onClick={() => this.setState({ touch: false })}>完成</span> :
+                            <span className="cartAllDoButton" onClick={() => this.setState({ touch: true })}>编辑</span>
+                    }
+                    <div className="cartAllDoButton pay">
+                        {this.state.touch ? <span onClick={this.delData.bind(this)}>删除所选</span> : <span>下单</span>}
+                    </div>
                 </div>
                 <Footer></Footer>
             </div>

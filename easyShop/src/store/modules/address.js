@@ -13,8 +13,8 @@ export default class List {
 
     }
     @action save = async (parmas) => {
-        let date = await save(parmas)
-        console.log(date)
+        await save(parmas)
+
     }
 
 }

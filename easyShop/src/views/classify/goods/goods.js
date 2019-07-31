@@ -17,6 +17,7 @@ class goods extends Component {
         this.props.goods.goods_date_fun(this.props.history.location.pathname.slice(7))
         this.props.goods.related_shop(this.props.history.location.pathname.slice(7))
         this.props.goods.count(this.props.history.location.pathname.slice(7))
+
         new Swiper(".goods_banner", {
             loop: true,
             pagination: {
@@ -34,9 +35,14 @@ class goods extends Component {
     close = () => {     //点击消失弹框
         this.setState({ flag: 'none' })
     }
-
+    tianjia = (item) => {   //添加到购物车
+        this.props.car.addcar({ //添加到购物车
+            goodsId: item.productList[0].goods_id,
+            productId: item.productList[0].id
+        })
+    }
     render() {
-        const { goods_date_swiper, goods_date_name, related_shop_related, goods_count } = this.props.goods
+        const { goods_date_swiper, goods_date_name, related_shop_related, goods_count, goods_date_name_big } = this.props.goods
         return (
             <div className='goods_wrap'>
                 <Header title={goods_date_name.goods_brief} t={this.state.flag}></Header>
@@ -131,7 +137,7 @@ class goods extends Component {
                             </div>
                         </div>
                         <div className="goodsDoWrap">
-                            <div onClick={() => this.tianjia()}>加入购物车</div>
+                            <div onClick={() => this.tianjia(goods_date_name_big)}>加入购物车</div>
                             <div>立即下单</div>
                         </div>
                     </div>
