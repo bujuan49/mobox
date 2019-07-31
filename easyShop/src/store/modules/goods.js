@@ -21,7 +21,7 @@ export default class Goods {
         this.related_shop_related = data.data.goodsList
     }
     @action addordelete = async (parmase) => {  //添加到收藏
-        const data = await addordelete(parmase)
+        await addordelete(parmase)
     }
     @action helper = async (parmase) => {  //模糊搜索
         const data = await helper(parmase)

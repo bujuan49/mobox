@@ -1,6 +1,6 @@
 import { observable, action } from "mobx";
 import { login } from '../../server/index'
-import { setToken, getToken } from '../../utils/index'
+import { setToken } from '../../utils/index'
 export default class List {
     // @observable 修饰属性
     @observable login = '';
