@@ -54,10 +54,6 @@ class append extends Component {
                 <div className='paick' style={{ display: this.state.play }}>
                     <div className="pack">
                         <div className="picker">
-                            {/* <div className="top-btn">
-                                <p onClick={() => this.props.cancle()}>取消</p>
-                                <p>确认</p>
-                            </div> */}
                             <PickerView
                                 onChange={this.onChange}
                                 data={address}
