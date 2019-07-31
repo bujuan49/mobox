@@ -6,6 +6,7 @@ import Login from './modules/login'
 import Car from './modules/car'
 import Special from './modules/special'
 import My from './modules/special'
+import Address from './modules/address'
 // 实例化模块
 const home = new Home();
 const classify = new Classify();
@@ -14,6 +15,7 @@ const login = new Login()
 const car = new Car()
 const special = new Special()
 const my = new My()
+const address = new Address()
 export default {
-    home, classify, goods, login, car, special, my
+    home, classify, goods, login, car, special, my, address
 }

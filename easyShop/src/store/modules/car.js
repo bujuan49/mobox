@@ -1,6 +1,6 @@
 //购物车具体功能
 import { observable, action } from "mobx";
-import { cartIndex } from '../../server/index'
+import { cartIndex, address } from '../../server/index'
 export default class List {
     // @observable 修饰属性
     @observable shopping = null;
@@ -13,5 +13,6 @@ export default class List {
 
         console.log(this.money)
     }
+
 
 }
