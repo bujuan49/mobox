@@ -30,23 +30,16 @@ class Addaddress extends Component {
         }
       }
       submit = () => { 
-      //   let {id}=this.props.match.params;
         this.props.mine.getNewAdd({address: "", city_id: 37, district_id: 403,is_default: false,mobile: "15345678901",
         name: "哈哈哈",
         province_id: 2
         });
-        // this.props.mine.getAddress();
-      
         this.props.form.validateFields((error, value) => {
           console.log(error, value);
         });
       }
     render() {
       const { getFieldProps} = this.props.form;
-      const {addList}=this.props.mine;
-     // console.log(addList)
-     
-      let errors;
        console.log(this.props.mine)
        return  <div className='add'>
                 <header>

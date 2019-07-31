@@ -16,3 +16,6 @@ export function addCart(parmas){
     // console.log("add...",parmas)
     // return request.post("/cart/add",parmas)
 }
+export function cartChecked(parmas){
+    return request.post("/cart/checked",parmas)
+}
