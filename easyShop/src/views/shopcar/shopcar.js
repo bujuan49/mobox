@@ -28,11 +28,10 @@ class shopcar extends Component {
 
     // }
     delData() {  //删除所选
-
+        this.props.car.shopping.map(item => !item.checked)
     }
     render() {
-        const { shopping, money, All } = this.props.car
-
+        const { shopping, money } = this.props.car
         return (
             <div className="car_wrap">
                 <div className="car_header">
@@ -74,7 +73,7 @@ class shopcar extends Component {
                     }
                 </div>
                 <div className="cartGoodsDo">
-                    <div className={this.props.car.All ? 'isCheckItem check' : 'isCheckItem'}> <div className='radius'></div>  </div>
+                    <div className='isCheckItem'> <div className={this.props.car.All ? 'radius check' : 'radius'}></div>  </div>
                     <div className="cartMsgAll">已选{money && money.checkedGoodsCount}￥{money && money.checkedGoodsAmount}</div>
                     {
                         this.state.falg ? <span className="cartAllDoButton" onClick={() => this.setState({ falg: false })}>完成</span> :
@@ -85,7 +84,7 @@ class shopcar extends Component {
                     </div>
                 </div>
                 <Footer></Footer>
-            </div>
+            </div >
         )
 
 

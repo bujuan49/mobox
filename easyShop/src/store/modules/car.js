@@ -33,7 +33,6 @@ export default class List {
         } else {
             this.shopping[parmas].checked = 1
         }
-        console.log(this.shopping[parmas])
         this.checked_Shopping({
             isChecked: this.shopping[parmas].checked,
             productIds: this.shopping[parmas].goods_id
