@@ -1,7 +1,8 @@
-.commentList{
-    background: white;
-    box-sizing: border-box;
-  .commentItem{
+.commentList {
+  background: white;
+  box-sizing: border-box;
+
+  .commentItem {
     width: 100%;
     height: auto;
     position: relative;
@@ -9,28 +10,31 @@
     color: gray;
     padding: .2rem;
     box-sizing: border-box;
-    border-bottom: 1px solid  gray;
+    border-bottom: 1px solid gray;
 
-    .userInfo{
+    .userInfo {
       height: .8rem;
       line-height: .8rem;
       font-size: .24rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      div:nth-child(1){
+
+      div:nth-child(1) {
         flex: 1;
         color: black;
       }
-      div:nth-child(2){
+
+      div:nth-child(2) {
         width: auto;
       }
     }
-    .userComment{
+
+    .userComment {
       line-height: .6rem;
       font-size: .3rem;
       overflow: hidden;
-      text-overflow:ellipsis;
+      text-overflow: ellipsis;
       white-space: nowrap;
     }
   }

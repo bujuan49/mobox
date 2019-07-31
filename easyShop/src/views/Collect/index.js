@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import {Icon} from 'antd'
+import { Icon } from 'antd'
 import './collect.scss'
 export class Collect extends Component {
-    goBack(){
+    goBack() {
         this.props.history.go(-1)
     }
     render() {
@@ -10,14 +10,14 @@ export class Collect extends Component {
         return (
             <div className='collector'>
                 <div className="title">
-                    <Icon type="left" onClick={()=>this.goBack()}/>
+                    <Icon type="left" onClick={() => this.goBack()} />
                     <h4>easyLikeGoods</h4>
-               </div>
-               <section>
+                </div>
+                <section>
 
-               </section>
+                </section>
             </div>
-           
+
         )
     }
 }

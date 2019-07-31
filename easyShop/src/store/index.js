@@ -8,10 +8,10 @@ import Mine from './modules/mine'
 // 实例化模块
 const home = new Home();
 const login = new Login();
-const special=new Special();
-const loading=new Loading()
-const mine=new Mine()
-export default{
+const special = new Special();
+const loading = new Loading()
+const mine = new Mine()
+export default {
     home,
     login,
     special,
