@@ -11,14 +11,8 @@ class homepage extends React.Component {
     }
     componentDidMount(){
         this.props.home.getallData()
-        // this.swiper=new Swiper(this.Myrefs)
     }
-    componentWillUnmount(){
-        // this.swiper.destroy()
-    }
-    
     render() {
-        console.log(this.props.history)
         const {banner,brandList,channel,newGoodsList,hotGoodsList,topicList,categoryList}=this.props.home;
         return (
             <React.Fragment>
@@ -94,20 +88,18 @@ class homepage extends React.Component {
                 </div>
                 <div className="scrollbox">
                     <div className="title_hot">
-                        <h4>人气推荐</h4>
+                        <h4>专题精选</h4>
                     </div>
                     <Carousel dots={false}>
                         {
                             topicList&&topicList.map(item=>
-                                <div className='swiper-slide' key={item.id}>
-                                    <a href="">
-                                        <img src={item.item_pic_url} alt=""/>
-                                        <div>
-                                            {item.title}
-                                            <span>{item.price_info}元起</span>
-                                        </div>
-                                        <div className="titleText">{item.subtitle}</div>
-                                    </a>  
+                                <div className='swiper-slide' key={item.id} onClick={()=>this.props.history.push({pathname:"/sdetail/"+item.id})}>
+                                    <img src={item.item_pic_url} alt=""/>
+                                    <div>
+                                        {item.title}
+                                        <span>{item.price_info}元起</span>
+                                    </div>
+                                    <div className="titleText">{item.subtitle}</div>
                                 </div>
                             ) 
                         }

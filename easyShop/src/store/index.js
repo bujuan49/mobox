@@ -5,16 +5,19 @@ import Special from './modules/special'
 import Loading from './modules/loading';
 import Mine from './modules/mine'
 
+import Shop from "./modules/shop"
 // 实例化模块
 const home = new Home();
 const login = new Login();
 const special=new Special();
 const loading=new Loading()
 const mine=new Mine()
+const shop =new Shop()
 export default{
     home,
     login,
     special,
     loading,
-    mine
+    mine,
+    shop
 }

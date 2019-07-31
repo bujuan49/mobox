@@ -22,29 +22,26 @@ export default class Home{
     //新品详情
     @observable newdatail=null;
     // @action 修饰方法
-    @action getallData(){
-        alldata().then(res=>{
-            console.log("16res...",res.data)
-            this.banner=res.data.banner
-            this.brandList=res.data.brandList
-            this.categoryList=res.data.categoryList
-            this.hotGoodsList=res.data.hotGoodsList
-            this.channel=res.data.channel
-            this.newGoodsList=res.data.newGoodsList
-            this.topicList=res.data.topicList
-          
-        })
-        
+    // @action changeCount=async(type)=>{
+    //     type==='+'? this.count++: this.count--;
+    // }
+    @action getallData= async()=>{
+        let data=await alldata()
+        this.banner=data.data.banner
+        this.brandList=data.data.brandList
+        this.categoryList=data.data.categoryList
+        this.hotGoodsList=data.data.hotGoodsList
+        this.channel=data.data.channel
+        this.newGoodsList=data.data.newGoodsList
+        this.topicList=data.data.topicList
     }
-    @action getDetail(payload){
-        branddetail(payload).then(res=>{
-            this.detailData=res.data.brand
-        })
+    @action getDetail=async (payload)=>{
+        let data=await branddetail(payload)
+        this.detailData=data.data.brand
     }
-    @action newDatail(payload){
-        goodsdetail(payload).then(res=>{
-            console.log(res)
-            this.newdatail=res.data
-        })
+    @action newDatail= async(payload)=>{
+        let data=await goodsdetail(payload)
+        console.log(data.data)
+        this.newdatail=data.data
     }
 }

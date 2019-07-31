@@ -12,7 +12,6 @@ class Home extends React.Component {
         
     }
     componentDidMount(){
-      //  console.log("home component")
         this.time=setInterval(()=>{
             this.props.loading.changeLoading(!this.props.loading.isLoading)
         },3000);
@@ -20,6 +19,7 @@ class Home extends React.Component {
         
     }
     componentWillUnmount(){
+        //console.log(this.myrefs)
         clearInterval(this.time)
     }
     render() {
@@ -32,7 +32,7 @@ class Home extends React.Component {
                    <div className="content">
                         {
                             this.props.children
-                        }
+                        }  
                    </div>
                    <div className="footer">
                        {
