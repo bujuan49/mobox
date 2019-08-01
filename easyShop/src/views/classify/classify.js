@@ -36,10 +36,11 @@ class Classify extends Component {
                     <input onClick={() => this.changeTo()} type="text" placeholder='搜索商品，共239款好商品<' />
                 </div>
                 <div className='wrap_classify'>
-                    <div className='left'>
+                    <div className='left' >
+                    
                         {
                             categoryList && categoryList.map((item, ind) => {
-                                return <p className={this.state.ind === item.show_index ? 'on' : ''} key={item.id} onClick={() => this.itemChan(item)}>{item.name}</p>
+                                return <p className={this.state.ind === item.show_index ? 'on' : 'hide'} key={item.id} onClick={() => this.itemChan(item)}>{item.name}</p>
                             })
                         }
                     </div>

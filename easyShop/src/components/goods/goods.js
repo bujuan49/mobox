@@ -32,6 +32,5 @@ class footer extends Component {
             </div>
         )
     }
-    // onClick={() => this.props.history.push('/shopcar')} 
 }
 export default withRouter(footer)

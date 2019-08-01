@@ -4,7 +4,8 @@ import GoodFoot from '../../../components/goods/goods'
 import Swiper from 'swiper'
 import './goods.scss'
 import { inject, observer } from 'mobx-react'
-@inject('goods', 'car')
+import Loagin from '../../../components/logding/logding'
+@inject('goods', 'car', 'loading')
 @observer
 class goods extends Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class goods extends Component {
         }
     }
     componentDidMount() {
+        setInterval(() => { this.props.loading.changeloading(false); }, 500);
         this.props.goods.goods_date_fun(this.props.history.location.pathname.slice(7))
         this.props.goods.related_shop(this.props.history.location.pathname.slice(7))
         this.props.goods.count(this.props.history.location.pathname.slice(7))
@@ -45,6 +47,7 @@ class goods extends Component {
         return (
             <div className='goods_wrap'>
                 <Header title={goods_date_name.goods_brief} t={this.state.flag}></Header>
+                <Loagin></Loagin>
                 <div className="goods_main">
                     <div className="swiper-container goods_banner">
                         <div className="swiper-wrapper">
