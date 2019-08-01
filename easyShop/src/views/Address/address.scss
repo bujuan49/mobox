@@ -27,18 +27,42 @@
             font-size: .32rem
         }
     }
-<<<<<<< HEAD
 
     section {
         flex: 1;
-=======
-    section{
-        flex:1;
-        overflow-y:auto;
-        .items{
+        overflow-y: auto;
+        background: #fff;
+
+        .items {
             display: flex;
+            padding: .2rem .4rem;
+            box-sizing: border-box;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+            .left{
+                width: 2rem;
+                display: flex;
+                justify-content: center;
+                span{
+                    color: #ff9500;
+                }
+            }
+            .center{
+                display: flex;
+                flex-direction: column;
+                flex:1;
+            }
+            .right{
+                display: flex;
+                flex-direction: column;
+                width: 1rem;
+                height:2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
         }
->>>>>>> 83f525ea715496176e3434055abe648e88cad235
     }
 
     footer {

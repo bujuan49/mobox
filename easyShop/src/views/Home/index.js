@@ -11,25 +11,15 @@ class Home extends React.Component {
         this.state = {};
 
     }
-<<<<<<< HEAD
-    componentDidMount() {
-        //  console.log("home component")
-        this.time = setInterval(() => {
-=======
     componentDidMount(){
         this.time=setInterval(()=>{
->>>>>>> 83f525ea715496176e3434055abe648e88cad235
             this.props.loading.changeLoading(!this.props.loading.isLoading)
         }, 3000);
         clearInterval(this.time)
 
     }
-<<<<<<< HEAD
-    componentWillUnmount() {
-=======
     componentWillUnmount(){
         //console.log(this.myrefs)
->>>>>>> 83f525ea715496176e3434055abe648e88cad235
         clearInterval(this.time)
     }
     render() {
@@ -42,19 +32,6 @@ class Home extends React.Component {
                     <div className="content">
                         {
                             this.props.children
-<<<<<<< HEAD
-                        }
-                    </div>
-                    <div className="footer">
-                        {
-                            routes.map((item, i) => {
-                                return item.path ? <div key={item.path}>
-                                    <NavLink to={item.path}><i className={item.icon}></i>{item.name}</NavLink></div> : null
-                            })
-                        }
-
-                    </div>
-=======
                         }  
                    </div>
                    <div className="footer">
@@ -66,7 +43,6 @@ class Home extends React.Component {
                        }
                         
                    </div>
->>>>>>> 83f525ea715496176e3434055abe648e88cad235
                 </div>
             </React.Fragment>
         );
