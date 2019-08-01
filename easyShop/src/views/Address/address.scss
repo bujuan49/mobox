@@ -27,9 +27,18 @@
             font-size: .32rem
         }
     }
+<<<<<<< HEAD
 
     section {
         flex: 1;
+=======
+    section{
+        flex:1;
+        overflow-y:auto;
+        .items{
+            display: flex;
+        }
+>>>>>>> 83f525ea715496176e3434055abe648e88cad235
     }
 
     footer {

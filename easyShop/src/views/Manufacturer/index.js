@@ -15,7 +15,6 @@ class Manufacturer extends React.Component {
     }
     render() {
         const {detailData}=this.props.home;
-        console.log()
         return (
             <React.Fragment>
                 <div>

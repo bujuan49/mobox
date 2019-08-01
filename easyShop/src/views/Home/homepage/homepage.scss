@@ -156,27 +156,23 @@ p{
 }
 .scrollbox{
     width: 100%;
-    height:8rem;
+    height:8rem;                
     .swiper-slide{
         width: 100%;
         text-align:center;
         text-align: center;
         overflow: hidden;
-        a{
-         
-          img{
-                width: 85%;
-                height:5.2rem;
-                margin:0 auto;
-            }  
-            .titleText{
-                height: 0.6rem;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
+        img{
+            width: 85%;
+            height:5.2rem;
+            margin:0 auto;
+        }  
+        .titleText{
+            height: 0.6rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
-        
     }
 }
 .cateGory{

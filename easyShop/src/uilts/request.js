@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { getToken } from '../uilts/index'
+import { getToken } from './index'
 // create an axios instance
 const service = axios.create({
   baseURL:'http://169.254.32.109:8888',

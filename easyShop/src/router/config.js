@@ -81,7 +81,7 @@ const route=[
         name:'查看更多评论'
     },
     {
-        to:"/home",
+        to:"/login",
         from:"/"
     }
 ]
