@@ -41,16 +41,21 @@ export default class List {
             productIds: this.shopping[parmas].goods_id
         })
         this.All = this.shopping.every(item => item.checked)
-
     }
     @action checked_Shopping = async (parmas) => {  //是否选中
         let data = await checked(parmas)
         this.numbers_Zie = data.data.cartList
-        console.log(data.data.cartList)
-        let all = this.numbers_Zie.filter(item => item.checked)
     }
     @action deletes = async (parmas) => {  //是否删除选中
         await deletes(parmas)
+    }
+    @action quan = async () => {  //全选
+        let quan = this.shopping.filter(item => !item.checked)
+        console.log(quan)
+        quan.map(item => {
+            item.checked = 1
+        })
+
     }
 }
 

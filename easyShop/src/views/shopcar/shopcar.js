@@ -15,18 +15,6 @@ class shopcar extends Component {
     componentDidMount() {
         this.props.car.cartIndex()
     }
-
-    // check = (checked, product_id, index) => {     //点击选中
-    //     let number = checked === 1 ? 0 : 1;
-    //     let obj = {
-    //         isChecked: number,
-    //         productIds: product_id
-    //     }
-    //     this.props.car.checked_Shopping(obj)
-    //     // let data = this.props.shop.checked_Shopping.filter(item => item.checked == 0)
-
-
-    // }
     delData() {  //删除所选
         let del = this.props.car.del_All.map(item => item.goods_id).join(',')
         console.log(del)
@@ -77,8 +65,8 @@ class shopcar extends Component {
                     }
                 </div>
                 <div className="cartGoodsDo">
-                    <div className='isCheckItem'> <div className={this.props.car.All ? 'radius check' : 'radius'}></div>  </div>
-                    <div className="cartMsgAll">已选{money && money.checkedGoodsCount}￥{money && money.checkedGoodsAmount}</div>
+                    <div className='isCheckItem'> <div onClick={() => this.props.car.quan()} className={this.props.car.All ? 'radius check' : 'radius'}></div>  </div>
+                    <div className="cartMsgAll" >已选{money && money.checkedGoodsCount}￥{money && money.checkedGoodsAmount}</div>
                     {
                         this.state.falg ? <span className="cartAllDoButton" onClick={() => this.setState({ falg: false })}>完成</span> :
                             <span className="cartAllDoButton" onClick={() => this.setState({ falg: true })}>编辑</span>
@@ -95,8 +83,5 @@ class shopcar extends Component {
     }
 }
 export default shopcar
-
-
-
 
 
