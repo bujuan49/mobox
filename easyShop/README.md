@@ -44,10 +44,8 @@ npm run start 或 yarn start
 [查看demo请戳这里](http://cangdu.org/elm/)（请用chrome手机模式预览）
 
 # 截图展示
-![Image text](https://github.com/10413555911/mobox/blob/gz/static/1%20(2).png)  
-![Image text](https://github.com/10413555911/mobox/blob/gz/static/1%20(1).png)   
-![Image text](https://github.com/10413555911/mobox/blob/gz/static/1%20(3).png)  
-![Image text](https://github.com/10413555911/mobox/blob/gz/static/1%20(4).png) 
+![Image text](https://github.com/10413555911/mobox/blob/gz/static/1%20(2).png)![Image text](https://github.com/10413555911/mobox/blob/gz/static/1%20(1).png)  
+![Image text](https://github.com/10413555911/mobox/blob/gz/static/1%20(3).png)![Image text](https://github.com/10413555911/mobox/blob/gz/static/1%20(4).png)   
 ![Image text](https://github.com/10413555911/mobox/blob/gz/static/1%20(5).png)
 
 
