@@ -64,7 +64,7 @@ class Address extends Component {
                                 }
                             </section>
                             <footer>
-                                <Button type="primary" block onClick={() => this.changeAddress()}>
+                                <Button className='login-form-save' type="primary" block onClick={() => this.changeAddress()}>
                                     新建地址
                         </Button>
                             </footer>

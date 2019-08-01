@@ -97,7 +97,7 @@ class Addaddress extends Component {
                     rules: [{ required: true }],
                 })} placeholder='详细地址'
                     onChange={(e) => this.setState({ value: e.target.value })} />
-                />
+
                 <div className='default'>
                     <span>设置默认地址</span> <CheckboxItem />
                 </div>
