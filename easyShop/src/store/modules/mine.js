@@ -8,14 +8,13 @@ export default class Mine {
     //获取地址
     @action getAddress=async(type)=>{
         const data=await addressData(type);
-         this.addressList=data
+         this.addressList=data.data
      }
      //添加地址
      @action getNewAdd=async(type)=>{
         const data=await addData(type);
-    
-        //this.addList=data
-       console.log(data)
+        this.addList=data;
+      console.log(data)
      }
      @action delAdd=async(type)=>{
         const data=await delData(type);

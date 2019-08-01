@@ -24,30 +24,28 @@ class Addaddress extends Component {
       }
       getSel() {
         const value = this.state.pickerValue;
-        console.log(value)
+        // console.log(value)
         if (!value) {
           return '';
         }
       }
       submit = () => { 
-      //   let {id}=this.props.match.params;
-        this.props.mine.getNewAdd({address: "", city_id: 37, district_id: 403,is_default: false,mobile: "15345678901",
-        name: "哈哈哈",
-        province_id: 2
-        });
-        // this.props.mine.getAddress();
-      
+      const values = this.state.pickerValue;
         this.props.form.validateFields((error, value) => {
-          console.log(error, value);
+          this.props.mine.getNewAdd({address: value.address, city_id: values[0], district_id: values[2],is_default: false,mobile: value.phone,
+          name: value.normal,
+          province_id: values[1]
+          });
         });
       }
     render() {
       const { getFieldProps} = this.props.form;
       const {addList}=this.props.mine;
-     // console.log(addList)
+      
+     console.log(addList)
      
       let errors;
-       console.log(this.props.mine)
+     //  console.log(this.props.mine)
        return  <div className='add'>
                 <header>
                     <h5>新增地址</h5>
@@ -58,7 +56,7 @@ class Addaddress extends Component {
                         rules: [{required: true}],
                       })}  placeholder='姓名' 
                       />
-                      <input {...getFieldProps('required', {
+                      <input {...getFieldProps('phone', {
                         onChange(){}, // have to write original onChange here if you need
                         rules: [{required: true}],
                       })}  placeholder='电话号码'/>
@@ -75,7 +73,7 @@ class Addaddress extends Component {
                                 getSel(){},
                               rules: [{required: true}],
                                        })}
-                              // extra={this.getSel()} 
+                              extra={this.getSel()} 
                                onClick={() => this.setState({ visible: true })}>
                               </List.Item>
                       </Picker>

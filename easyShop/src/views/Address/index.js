@@ -15,8 +15,12 @@ import {observer,inject} from 'mobx-react'
     changeAddress(){
       this.props.mine.flag=true
     }
+    componentDidMount(){
+        this.props.mine.getAddress()
+    }
     render() {
         const {flag,addressList}=this.props.mine;
+        
         return (
             <>
                 {
@@ -27,6 +31,23 @@ import {observer,inject} from 'mobx-react'
                             <h4>地址管理</h4>
                         </div>
                         <section>
+                            {
+                                addressList.map((item,index)=><div key={index} className='items'>
+                                  <div className='left'>
+                                        <span>{item.name}</span>
+                                        
+                                  </div>
+                                  <div className='center'>
+                                     <p>{item.mobile}</p>
+                                     <p>{item.address}</p>
+
+                                  </div>
+                                  <div className='right'>
+                                      删除
+                                  </div>
+
+                                </div>)
+                            }
                         </section>
                         <footer>
                         <Button type="primary" block onClick={()=>this.changeAddress()}>

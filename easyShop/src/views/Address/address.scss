@@ -26,6 +26,10 @@
     }
     section{
         flex:1;
+        overflow-y:auto;
+        .items{
+            display: flex;
+        }
     }
     footer{
         height: 1rem;
