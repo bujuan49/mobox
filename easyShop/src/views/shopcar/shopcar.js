@@ -28,7 +28,11 @@ class shopcar extends Component {
 
     // }
     delData() {  //删除所选
-        this.props.car.shopping.map(item => !item.checked)
+        let del = this.props.car.del_All.map(item => item.goods_id).join(',')
+        console.log(del)
+        this.props.car.deletes({
+            productIds: del
+        })
     }
     render() {
         const { shopping, money } = this.props.car
@@ -91,3 +95,8 @@ class shopcar extends Component {
     }
 }
 export default shopcar
+
+
+
+
+

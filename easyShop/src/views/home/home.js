@@ -16,6 +16,7 @@ class Home extends Component {
             loop: true,
             pagination: {
                 el: '.swiper-pagination',
+                paginationClickable: true
             },
             autoplay: true
         });
@@ -25,6 +26,7 @@ class Home extends Component {
         return (
             <div className='home_wrap'>
                 <div className="home_mains">
+            
                     <div className="swiper-container banner">
                         <div className="swiper-wrapper">
                             {
@@ -36,10 +38,12 @@ class Home extends Component {
                             }
                         </div>
                     </div>
+
+
                     <div className="nav" style={{ height: '4rem' }}>
                         {
                             channel && channel.map(item =>
-                                <div key={item.id}><img src={item.icon_url} alt="" style={{ height: '.6rem', width: '.6rem',marginTop: '.2rem' }} /><span style={{ marginTop: '.1rem' }}>{item.name}</span></div>
+                                <div key={item.id}><img src={item.icon_url} alt="" style={{ height: '.6rem', width: '.6rem', marginTop: '.2rem' }} /><span style={{ marginTop: '.1rem' }}>{item.name}</span></div>
                             )
                         }
                     </div>

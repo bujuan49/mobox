@@ -9,7 +9,6 @@ export default class List {
     @action login = async (parmase) => {
         window.localStorage.setItem('user', parmase.mobile)
         const data = await login(parmase)
-        console.log(data)
         if (data.errno === 0) {
             setToken(data.data.sessionKey)
             this.loginUser = data.errno

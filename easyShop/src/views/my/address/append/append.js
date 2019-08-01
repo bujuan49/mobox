@@ -50,7 +50,7 @@ class append extends Component {
                     <p onClick={() => this.props.history.go(-1)}>取消</p><p style={{ background: 'skyblue' }} onClick={() => this.save()}>保存</p>
                 </div>
 
-                <div className='paick' style={{ display: this.state.play }}>
+                <div className='paick' style={{ display: this.state.play, marginTop: '3rem' }}>
                     <div className="pack">
                         <div className="picker">
                             <PickerView
@@ -60,6 +60,7 @@ class append extends Component {
                             />
                         </div>
                     </div>
+                    
                 </div>
             </div>
         )

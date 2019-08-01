@@ -10,13 +10,11 @@ export default class List {
         let date = await address()
         this.adds = date.data
         console.log(date)
-
     }
     @action save = async (parmas) => {
        let data = await save(parmas)
         console.log(data)
     }
-
 }
 
 

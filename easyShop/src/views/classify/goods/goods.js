@@ -17,7 +17,6 @@ class goods extends Component {
         this.props.goods.goods_date_fun(this.props.history.location.pathname.slice(7))
         this.props.goods.related_shop(this.props.history.location.pathname.slice(7))
         this.props.goods.count(this.props.history.location.pathname.slice(7))
-
         new Swiper(".goods_banner", {
             loop: true,
             pagination: {
