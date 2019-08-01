@@ -71,10 +71,10 @@ export const address = loadable({   //地址
     loading: Loing,
     loader: () => import("../../views/my/address/address")
 })
-export const append = loadable({   //增加地址
-    loading: Loing,
-    loader: () => import("../../views/my/address/append/append")
-})
+// export const append = loadable({   //增加地址
+//     loading: Loing,
+//     loader: () => import("../../views/my/address/append/append")
+// })
 
 
 

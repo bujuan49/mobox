@@ -1,54 +1,77 @@
-import React, { Component } from 'react';
-import './address.scss';
-import Header from '../../../components/header/header'
-import { inject, observer } from "mobx-react";
-@inject("address")
+
+import React, { Component } from 'react'
+import { Icon, Button } from 'antd'
+import './address.scss'
+
+import Addaddress from '../../../components/address/index'
+import { observer, inject } from 'mobx-react'
+import { Modal } from 'antd-mobile'
+const alert = Modal.alert;
+@inject('mine')
 @observer
 
-class address extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            title: '地址管理'
-        }
-    }
+class Address extends Component {
     componentDidMount() {
-        this.props.address.address()
+        this.props.mine.getAddress()
     }
-    addree = () => {
-        this.props.history.push('/append')
+    showAlert(id) {
+        const alertInstance = alert('删除', '确定要删除改地址么？？？', [
+            { text: '取消', style: 'default' },
+            {
+                text: '确定', onPress: () => {
+                    this.props.mine.getAddress()
+                    this.props.mine.delAddress({ id: id });
+                }
+            },
+        ]);
+        this.props.mine.getAddress()
+        this.props.mine.delAddress({ id: id });
+    };
+    goBack() {
+        this.props.history.go(-1)
+    }
+    changeAddress() {
+        this.props.mine.flag = true
     }
     render() {
-        const { adds } = this.props.address
+        const { flag, addressList } = this.props.mine;
+        console.log(addressList)
         return (
-            <div className='address_wrap'>
-                <Header title={this.state.title}></Header>
-                <div className="addressList">
-                    {
-                        adds && adds.map(item => {
-                            return <div className="addressItem">
-                                <div className="addressMsg">
-                                    <div className="concatName">12</div>
-                                    <div className="addressDetail">
-                                        <div className="concatPhone">15678900751</div>
-                                        <div className="concatAddress">河北省石家庄市长安区</div>
-                                        <div className="concatAddress"></div>
-                                    </div>
-                                    <div className="deleteAddress">
-                                        X
-                                </div>
-                                </div>
+            <>
+                {
+                    flag && flag ? <Addaddress />
+                        : <div className='addresser'>
+                            <div className="title">
+                                <Icon type="left" onClick={() => this.goBack()} />
+                                <h4>地址管理</h4>
                             </div>
-                        })
-                    }
-                </div>
-                <div className="addAddress">
-                    <span onClick={() => this.addree()}>新建地址</span>
-                </div>
-            </div >
+                            <section>
+                                {
+                                    addressList && addressList.map(item => <div className='items' key={item.id} >
+                                        <div className='left'>
+                                            <span>{item.name}</span>
+                                        </div>
+                                        <div className='center'>
+                                            <span>{item.mobile}</span>
+                                            <span>{item.city_id}</span>
+                                            <span>{item.address}</span>
+                                        </div>
+                                        <div className='right'>
+                                            <Icon type="delete" onClick={() => this.showAlert(item.id)} />
+
+                                        </div>
+                                    </div>)
+                                }
+                            </section>
+                            <footer>
+                                <Button type="primary" block onClick={() => this.changeAddress()}>
+                                    新建地址
+                        </Button>
+                            </footer>
+                        </div>
+                }
+            </>
         )
     }
-
 }
-
-export default address;
+export default Address
