@@ -43,21 +43,26 @@ npm run start 或 yarn start
 
 [查看demo请戳这里](http://cangdu.org/elm/)（请用chrome手机模式预览）
 
+# 截图展示
+![Image text]https://github.com/10413555911/mobox/blob/gz/static/1%20(2).png  
+![Image text]https://github.com/10413555911/mobox/blob/gz/static/1%20(1).png   
+![Image text]https://github.com/10413555911/mobox/blob/gz/static/1%20(3).png  
+![Image text]https://github.com/10413555911/mobox/blob/gz/static/1%20(4).png 
+![Image text]https://github.com/10413555911/mobox/blob/gz/static/1%20(5).png
 
 
 # 目标功能
-- [ ] 登录、注册 -- 未完成
+- [x] 登录、注册 -- 未完成
 - [x] 首页渲染 -- 完成
 - [X] 路由 -- 完成
 - [x] 分类详情页 -- 完成
-- [ ]  分类详情页-- 未完成
-- [ ] 购物车 -- 未完成
-- [ ] 可以选择开始结束时间 -- 完成
-- [ ] 计算时间 -- 未完成
-- [ ] 权限问题 -- 未完成
-- [ ] 我的 -- 未完成
+- [x]  分类详情页-- 未完成
+- [x] 购物车 -- 未完成
+- [x] 增加地址 -- 未完成
+- [x] 模糊搜索 -- 未完成
+- [x] loading -- 未完成
 - [ ] 点击完成购物车功能 -- 未完成
-- [ ] 首页子页面 -- 未完成
+- [x] 首页子页面 -- 未完成
 
 
 
