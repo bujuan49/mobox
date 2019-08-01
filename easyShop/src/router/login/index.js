@@ -1,7 +1,31 @@
 import loadable from "react-loadable"
 import React from "react"
+import '../../components/logding/logding.scss'
 function Loing() {
-    return <h3>loading</h3>
+    return <div className="loading">
+        <div className="circle-loader">
+            <div className="circle-line">
+                <div className="circle circle-blue"></div>
+                <div className="circle circle-blue"></div>
+                <div className="circle circle-blue"></div>
+            </div>
+            <div className="circle-line">
+                <div className="circle circle-yellow"></div>
+                <div className="circle circle-yellow"></div>
+                <div className="circle circle-yellow"></div>
+            </div>
+            <div className="circle-line">
+                <div className="circle circle-red"></div>
+                <div className="circle circle-red"></div>
+                <div className="circle circle-red"></div>
+            </div>
+            <div className="circle-line">
+                <div className="circle circle-green"></div>
+                <div className="circle circle-green"></div>
+                <div className="circle circle-green"></div>
+            </div>
+        </div>
+    </div>
 }
 export const login = loadable({
     loading: Loing,
