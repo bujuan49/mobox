@@ -24,7 +24,6 @@ class address extends Component {
             <div className='address_wrap'>
                 <Header title={this.state.title}></Header>
                 <div className="addressList">
-
                     {
                         adds && adds.map(item => {
                             return <div className="addressItem">
@@ -41,9 +40,7 @@ class address extends Component {
                                 </div>
                             </div>
                         })
-
                     }
-
                 </div>
                 <div className="addAddress">
                     <span onClick={() => this.addree()}>新建地址</span>

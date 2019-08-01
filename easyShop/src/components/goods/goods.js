@@ -24,7 +24,6 @@ class footer extends Component {
     }
     render() {
         return (
-
             <div className='goods_foot'>
                 <div className={this.state.flag ? 'iconfont icon-xingxing action' : 'iconfont icon-xingxing'} onClick={() => this.add()} style={{ fontSize: '.6rem' }}></div>
                 <div className='iconfont icon-jieshaoxinxi_o' onClick={() => this.props.historys.push('/shopcar')} style={{ fontSize: '.6rem' }}></div>

@@ -23,7 +23,6 @@ export function goodscount() {     //获取用户购物车商品数量商品的�
 export function cartIndex(parmase) {     //获取在售商品的数量
     return request.get('/cart/index')
 }
-
 export function addcar(parmase) {     //添加到购物车
     return request.post('/api/cart/add', parmase)
 }

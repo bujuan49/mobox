@@ -3,7 +3,8 @@ import './home.scss'
 import Swiper from 'swiper'
 import { inject, observer } from 'mobx-react'
 import Footer from '../../components/footer/footer'
-@inject('home')
+import Loading from '../../components/logding/logding'
+@inject('home', 'loading')
 @observer
 class Home extends Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class Home extends Component {
         this.state = {};
     }
     componentDidMount() {
+        setInterval(() => { this.props.loading.changeloading(false); }, 500);
         this.props.home.getallData()
         new Swiper(".banner", {
             loop: true,
@@ -24,9 +26,11 @@ class Home extends Component {
     render() {
         const { banner, brandList, channel, newGoodsList, hotGoodsList, topicList, categoryList } = this.props.home;
         return (
+
             <div className='home_wrap'>
+                <Loading />
                 <div className="home_mains">
-            
+
                     <div className="swiper-container banner">
                         <div className="swiper-wrapper">
                             {
@@ -38,7 +42,6 @@ class Home extends Component {
                             }
                         </div>
                     </div>
-
 
                     <div className="nav" style={{ height: '4rem' }}>
                         {
