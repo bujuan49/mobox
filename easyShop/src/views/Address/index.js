@@ -63,7 +63,7 @@ class Address extends Component {
                                         </div>
                                         <div className='center'>
                                             <span>{item.mobile}</span>
-                                            <span>{item.city_id}</span>
+                                            <span>{item.province}</span>
                                             <span>{item.address}</span>
                                         </div>
                                         <div className='right'>
@@ -76,7 +76,7 @@ class Address extends Component {
                             <footer>
                                 <Button type="primary" block onClick={() => this.changeAddress()}>
                                     新建地址
-                        </Button>
+                               </Button>
                             </footer>
                         </div>
                 }

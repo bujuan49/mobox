@@ -10,16 +10,13 @@ class CommentWrite extends Component {
     content: '',
     loading: false
   }
-  componentDidMount() {
-    let { id } = this.props.match.params;
-    this.props.special.writeComment({ content: this.state.content, typeid: 1, valueid: id })
-  }
+
   goBack() {
     this.props.history.go(-1)
   }
   resetArea() {
     this.setState({
-      content: ' '
+      content: ''
     })
   }
   getTextValue(e) {
@@ -29,6 +26,8 @@ class CommentWrite extends Component {
   }
   message() {
     alert('添加成功')
+    let { id } = this.props.match.params;
+    this.props.special.writeComment({ content: this.state.content, typeid: 1, valueid: id })
     this.props.history.go(-1)
 
   }
@@ -50,13 +49,14 @@ class CommentWrite extends Component {
         </header>
         <div className="textAreaContent">
           <textarea className="inputArea"
+           value={content}
             onChange={this.getTextValue.bind(this)}
             maxLength={areaMaxLen} autoFocus />
           <span style={{ color: content.length === areaMaxLen ? 'red' : '' }}>{content.length}/{areaMaxLen}</span>
         </div>
         <div className="buttons">
           <div>
-            {content.length ? <Button onClick={this.resetArea.bind(this)}>清空</Button> : null}
+            {content.length >1? <Button onClick={()=>this.resetArea()}>清空</Button> : null}
           </div>
           <div>
             <Button type="primary" onClick={(Comments) => this.message(Comments)}>留言</Button>

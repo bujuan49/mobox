@@ -18,7 +18,7 @@ class Addaddress extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: null,
+      value: '',
       // fields: {name: ''} 
     }
   }
@@ -29,41 +29,40 @@ class Addaddress extends Component {
     this.props.mine.flag = false
   }
   getSel() {
-    const values = this.state.pickerValue;
-   
-    if (!values) {
+    const value = this.state.pickerValue; 
+    if (!value) {
       return '';
     }
-    const treeChildren = arrayTreeFilter(district, (c, level) => c.values === values[level]);
-    console.log(treeChildren)
-    return treeChildren.map(v => v.label).join(',');
+   
+    const treeChildren = arrayTreeFilter(district, (c, level) => c.value === value[level]);
+  
+    return treeChildren.map(v => v.label).join(',');  
     
   }
   
   //保存
   submit = () => {
-  
-    const values = this.state.pickerValue;
-    //console.log( this.state.pickerValue)
+    let province=this.getSel();
+    //console.log(province)
+    //const value = this.state.pickerValue;
     this.props.form.validateFields((error, value) => {
+   //   console.log(this.getSel())
       // console.log(value)
       this.props.mine.getNewAdd({
         address: value.address,
-        city_id: values.city_id,
-        district_id: values.district_id,
         is_default: false,
         mobile: value.phone,
         name: value.names,
-        province_id: values.province_id
+        province:value.city
       });
     });
     this.props.mine.flag = false;
-    //   console.log(this.props.mine.flag)
   }
   render() {
     const { getFieldProps } = this.props.form;
     let errors;
-    // console.log(this.props.mine)
+
+
     return <div className='add'>
       <header>
         <h5>新增地址</h5>
@@ -80,22 +79,26 @@ class Addaddress extends Component {
             onChange(){}, // have to write original onChange here if you need
           rules: [{ required: true }],
         })} placeholder='电话号码'  />
-        <Picker
+        <Picker {...getFieldProps('city', {
+              //  getSel(){},
+              rules: [{ required: true }],
+            })}
           visible={this.state.visible}
           data={district}
-          placeholder=' 北京/北京市/东城区'
+          // initialValue=' 北京/北京市/东城区'
           value={this.state.pickerValue}
         
-          onChange={v => this.setState({ pickerValue: v })}
+          onChange={v => this.setState({ pickerValue: v})}
           onOk={() => this.setState({ visible: false })}
           onDismiss={() => this.setState({ visible: false })}
         >
-          <List.Item {...getFieldProps('city', {
-            //  getSel(){},
-            rules: [{ required: true }],
-          })}
+          <List.Item 
             extra={this.getSel()}
-            onClick={() => this.setState({ visible: true })}>
+            onClick={() => this.setState({ visible: true })}
+            {...getFieldProps('city', {
+              //  getSel(){},
+              rules: [{ required: true }],
+            })}>
           </List.Item>
         </Picker>
      
@@ -106,7 +109,7 @@ class Addaddress extends Component {
         <div className='default'>
           <span>设置默认地址</span> <CheckboxItem />
         </div>
-      
+     
 
       </section>
       <div className='btns'>
