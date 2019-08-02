@@ -1,6 +1,7 @@
 import {observable,action} from "mobx"
 import {goodscount,getCart,addCart} from "../../services/index"
-
+import { genPercentAdd } from "antd/lib/upload/utils";
+import { async } from "q";
 export default class Shop{
     @observable sum=0;
     @observable count=0;
@@ -8,7 +9,6 @@ export default class Shop{
     @observable flag=false;
     @action getShopcont= async ()=>{
         let data=await goodscount()
-        console.log("shop...",data)
         this.sum =data.data.cartTotal.goodsCount
     }
     @action getallShop= async ()=>{

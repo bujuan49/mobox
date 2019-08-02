@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Checkbox,Picker, List } from 'antd-mobile';
 import { district } from 'antd-mobile-demo-data';
 import { createForm,formShape } from 'rc-form';
+import arrayTreeFilter from 'array-tree-filter';
 import 'antd-mobile/dist/antd-mobile.css'
 import './add.scss'
 import {observer,inject} from 'mobx-react'
@@ -16,7 +17,11 @@ class Addaddress extends Component {
       constructor(props){
           super(props)
           this.state = {
-            value: null
+            value: null,
+            data: [],
+            cols: 1,
+            pickerValue: [],
+            asyncValue: []
           };
       }
       closeDo = () => {
@@ -28,6 +33,8 @@ class Addaddress extends Component {
         if (!value) {
           return '';
         }
+        const treeChildren = arrayTreeFilter(district, (c, level) => c.value === value[level]);
+        return treeChildren.map(v => v.label).join(',');
       }
       submit = () => { 
       const values = this.state.pickerValue;
@@ -96,4 +103,4 @@ class Addaddress extends Component {
     }
 }
 
-export default createForm()(Addaddress)
+export default createForm()(Addaddress);

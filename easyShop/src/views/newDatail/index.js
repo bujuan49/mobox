@@ -25,6 +25,7 @@ import Buttons from "../../components/Button"
     };
     componentDidMount(){
         let detid=(this.props.location.pathname).slice(-7);
+        console.log(detid)
         this.props.home.newDatail({id:detid})
         this.props.shop.getShopcont()
     }

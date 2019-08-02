@@ -25,6 +25,7 @@
     .shop_content{
         width: 100%;
         flex:1;
+        overflow-y: auto;
         .shop_box{
             width: 100%;
             height: 2rem;
@@ -37,6 +38,7 @@
             }
             div{
                 &:nth-child(1){
+                    height: 100%;
                     img{
                         width: 0.4rem;
                         width: 0.4rem;
