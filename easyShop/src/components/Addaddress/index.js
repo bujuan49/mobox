@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Checkbox, Picker, List } from 'antd-mobile';
 import { district } from 'antd-mobile-demo-data';
-import { createForm, formShape } from 'rc-form';
+import { createForm,formShape } from 'rc-form';
 import arrayTreeFilter from 'array-tree-filter';
 import 'antd-mobile/dist/antd-mobile.css'
 import './add.scss'
@@ -51,7 +51,7 @@ class Addaddress extends Component {
         is_default: false,
         mobile: value.phone,
         name: value.names,
-        province:values
+       
       });
     });
     this.props.mine.flag = false;
@@ -76,7 +76,7 @@ class Addaddress extends Component {
         <input {...getFieldProps('phone', {
             onchange(){}, // have to write original onChange here if you need
           rules: [{ required: true }],
-        })} placeholder='电话号码'  />
+        })} placeholder='电话号码'  className='phoneNumber'/>
         <Picker {...getFieldProps('city', {
               //  getSel(){},
               rules: [{ required: true }],
@@ -119,4 +119,4 @@ class Addaddress extends Component {
   }
 }
 
-export default createForm()(Addaddress)
+export default createForm()(Addaddress);

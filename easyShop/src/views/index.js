@@ -61,3 +61,8 @@ export const Address=loadable({
     loader:()=>import("../views/Address"),
     loading:Loading
 })
+
+export const Categorys=loadable({
+    loader:()=>import("../views/Home/classfiy/categorys"),
+    loading:Loading
+})

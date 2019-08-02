@@ -1,4 +1,4 @@
-import {Home,Login,Homepage,Specal,Classfiy,Shop,Mine,Manufacturer,Sdetail,CommentWrite,Comment,Collect,newDatail,Address} from "../views/index"
+import {Home,Login,Homepage,Specal,Classfiy,Shop,Mine,Manufacturer,Sdetail,CommentWrite,Comment,Collect,newDatail,Address,Categorys} from "../views/index"
 
 const route=[
     {
@@ -57,6 +57,11 @@ const route=[
         name:'收藏'
     },
     {
+        path:"/categorys",
+        component:Categorys,
+        name:"分类详情"
+    },
+    {
         path:"/address",
         component:Address,
         name:'地址'
@@ -66,10 +71,11 @@ const route=[
       component:Sdetail,
       name:'专题详情'
     },
+
     {
         path:"/newDatail",
         component:newDatail,
-        name:"新品详情"
+        name:"商品详情"
     },{
         path:'/commentWrite/:id',
         component:CommentWrite,
