@@ -29,7 +29,7 @@ class Addaddress extends Component {
     this.props.mine.flag = false
   }
   getSel() {
-    const value = this.state.pickerValue; 
+    const value = this.state.pickerValue;
     if (!value) {
       return '';
     }
@@ -43,13 +43,15 @@ class Addaddress extends Component {
   //保存
   submit = () => {
     let province=this.getSel();
+  //  console.log(province)
+    const values = this.state.pickerValue;
     this.props.form.validateFields((error, value) => {
       this.props.mine.getNewAdd({
         address: value.address,
         is_default: false,
         mobile: value.phone,
         name: value.names,
-        province:value.city
+        province:values
       });
     });
     this.props.mine.flag = false;
@@ -65,14 +67,14 @@ class Addaddress extends Component {
       </header>
       <section>
         <input {...getFieldProps('names', {
-          onChange(){}, // have to write original onChange here if you need
+          onchange(){}, // have to write original onChange here if you need
           rules: [{ required: true }],
           
         })} placeholder='姓名'
        
         />
         <input {...getFieldProps('phone', {
-            onChange(){}, // have to write original onChange here if you need
+            onchange(){}, // have to write original onChange here if you need
           rules: [{ required: true }],
         })} placeholder='电话号码'  />
         <Picker {...getFieldProps('city', {
@@ -99,7 +101,7 @@ class Addaddress extends Component {
         </Picker>
      
         <input {...getFieldProps('address', {
-           onChange(){}, // have to write original onChange here if you need
+           onhange(){}, // have to write original onChange here if you need
           rules: [{ required: true }],
         })} placeholder='详细地址' />
         <div className='default'>

@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom"
 import "./home.scss"
 import Header from "../../components/Header/index"
 import { observer, inject } from "mobx-react"
+import { Toast} from 'antd-mobile';
 @inject("loading")
 @observer
 class Home extends React.Component {
@@ -22,8 +23,22 @@ class Home extends React.Component {
         //console.log(this.myrefs)
         clearInterval(this.time)
     }
+    loadingToast=() =>{
+        Toast.loading('Loading...', 1, () => {
+          console.log('Load complete !!!');
+        });
+      }
+    componentDidMount() {
+        Toast.loading('Loading...', 30, () => {
+          console.log('Load complete !!!');
+        });
+    
+        setTimeout(() => {
+          Toast.hide();
+        }, 3000);
+      }
     render() {
-
+        
         const { routes } = this.props;
         return (
             <React.Fragment>
@@ -38,7 +53,9 @@ class Home extends React.Component {
                        {
                           routes.map((item,i)=>{
                             return item.path ?<div key={item.path}>
-                                <NavLink to={item.path}><i className={item.icon}></i>{item.name}</NavLink></div>:null
+                                <NavLink to={item.path} onClick={()=>this.loadingToast()}>
+                                    <i className={item.icon}></i>{item.name}
+                                </NavLink></div>:null
                           }) 
                        }
                         

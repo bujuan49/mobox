@@ -4,7 +4,6 @@ import Login from './modules/login';
 import Special from './modules/special'
 import Loading from './modules/loading';
 import Mine from './modules/mine'
-
 import Shop from "./modules/shop"
 // 实例化模块
 const home = new Home();
