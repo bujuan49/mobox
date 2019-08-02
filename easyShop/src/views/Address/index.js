@@ -9,7 +9,6 @@ const alert = Modal.alert;
 @observer
 
 class Address extends Component {
-    
     componentDidMount() {
         this.props.mine.getAddress()
     }
@@ -30,19 +29,13 @@ class Address extends Component {
         }, 5000);
         this.props.mine.getAddress()
         this.props.mine.delAddress({ id: id });
-
-
     };
-
     goBack() {
         this.props.history.go(-1)
     }
-
     changeAddress() {
         this.props.mine.flag = true
     }
-   
-
     render() {
         const { flag, addressList } = this.props.mine;
         console.log(addressList)
@@ -63,7 +56,8 @@ class Address extends Component {
                                         </div>
                                         <div className='center'>
                                             <span>{item.mobile}</span>
-                                            <span>{item.province}</span>
+                                            <span>{item.full_region}</span>
+                                            <br/>
                                             <span>{item.address}</span>
                                         </div>
                                         <div className='right'>
