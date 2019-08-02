@@ -1,0 +1,70 @@
+import React, { Component } from 'react'
+// import Header from '../../../components/header/header'
+import './categorys.scss'
+import { inject, observer } from 'mobx-react'
+import {Icon} from "antd"
+@inject('classfiy')
+@observer
+class categorys extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            ind: 1005010
+        }
+    }
+    componentWillMount() {
+        if (window.location.href.indexOf("#") === -1) {
+            window.location.href = window.location.href + "#";
+            window.location.reload();
+        }
+    }
+    componentDidMount() {
+        this.props.classfiy.category(JSON.parse(localStorage.getItem('key')))
+        this.props.classfiy.nav(this.props.history.location.pathname.slice(11))
+    }
+    changes = (item) => {
+        this.setState({ ind: item.id })
+        this.props.classfiy.category(item.id)
+    }
+    ToGood = (item) => {    //点击跳转到购物车
+        this.props.history.push('/newDatail/' + item.id)
+    }
+    render() {
+        const { category_C_date, category_detail } = this.props.classfiy
+        return (
+            <div className='categorys_wrap'>
+                <div className="header"><Icon type="left" onClick={()=>this.props.history.go(-1)}/><span>奇趣分类 </span></div>
+                <ul className='categorys_slide'>
+                    {
+                        category_detail && category_detail.map((item, index) => {
+                            return <li key={item.id} onClick={() => this.changes(item)} className={this.state.ind === item.id ? 'ons' : ''}>{item.name}</li>
+                        })
+                    }
+                </ul>
+                <div className='categorys_main'>
+                    <div className='categorys_title'>
+                        <p style={{ marginTop: '.4rem' }}>布艺软装</p>
+                        <p className='title_p' style={{ marginTop: '.2rem', padding: '0 0 .2rem 0' }}>各种风格软装饰你的家</p>
+                    </div>
+                    <div className='categorys_box'>
+                        {
+                            category_C_date && category_C_date.map(item => {
+                                return <dl key={item.id} onClick={() => { this.ToGood(item) }}>
+                                    <dt>
+                                        <img src={item.list_pic_url} alt="" />
+                                    </dt>
+                                    <dd>
+                                        <span style={{ whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden', textAlign: 'center', padding: '0 .2rem' }}>{item.name}</span>
+                                        <span style={{ color: 'red', marginTop: '.1rem' }}>${item.retail_price}元</span>
+                                    </dd>
+                                </dl>
+                            })
+
+                        }
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
+export default categorys

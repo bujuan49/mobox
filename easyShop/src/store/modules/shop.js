@@ -1,28 +1,67 @@
 import {observable,action} from "mobx"
-import {goodscount,getCart,addCart,cartChecked} from "../../services/index"
+import {goodscount,getCart,addCart,cartChecked,cartDelete} from "../../services/index"
 export default class Shop{
     @observable sum=0;
     @observable count=0;
     @observable allShop={};
     @observable flag=false;
+    @observable ischecked;
     @action getShopcont= async ()=>{
         let data=await goodscount()
         this.sum =data.data.cartTotal.goodsCount
     }
-    @action getallShop= async ()=>{
+    /***
+     * 获取购物车所以商品
+     ***/
+    @action getallShop= async (id)=>{
         let data=await getCart();
-        console.log("shop....",data.data)
+        //console.log("shop....",data)
         this.allShop=data.data;
-        //this.allShop.map(item=>)
+        //反选
+        this.ischecked=this.allShop.cartList.every(item=>{
+            return item.checked>0
+        })
+        console.log("ischecked...",this.ischecked)
     }
-    @action changeCount= async (type)=>{
+    /***
+     * 全选商品
+     ***/
+    @action all=async (ischecked)=>{
+       if(ischecked){
+            this.allShop.cartList.map(item=>{
+                return item.checked=1;
+            })
+       }else{
+            this.allShop.cartList.map(item=>{
+                return item.checked=0;
+            })
+       }
+    }
+    /***
+     * 加减商品
+     ***/
+    @action changeCount= async (type,id)=>{
         type==='+'? this.count++: this.count--;
     }
+    /***
+     * 添加商品
+     ***/
     @action getAdd= async(payload)=>{
         let data=await addCart(payload);
         console.log(data)
     }
-    @action checkout=async (payload)=>{
+    /***
+     * 商品是否选中
+     ***/
+    @action changCheckout=async (payload)=>{
         let data=await cartChecked(payload);
+        console.log(data)
+    }
+    /***
+     * 删除商品
+     ***/
+    @action shopDelete=async (payload)=>{
+        let data= await cartDelete(payload);
+        console.log(data)
     }
 }

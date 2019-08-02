@@ -1,0 +1,86 @@
+input{
+    outline: none;
+    border:0;
+}
+.wrap_classify {
+    flex: 1;
+    display: flex;
+    margin-top: 0.1rem;
+    .left {
+      height: 100%;
+      width: 2rem;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #ccc;
+      p {
+        font-size: 0.3rem;
+        height: 0.8rem;
+        text-align: center;
+        line-height: 0.8rem;
+      }
+    }
+  }
+  .right {
+    display: flex;
+    flex: 1;
+    font-size: 0.3rem;
+    flex-direction: column;
+    overflow-y: auto;
+    .log {
+      width: 5rem;
+      height: 3rem;
+      margin: 0 auto;
+    }
+    .fenlei {
+      margin-top: 0.2rem;
+      width: 100%;
+      text-align: center;
+    }
+    .main_dl {
+      margin-top: 0.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      height: 2rem;
+      dl {
+        flex-shrink: none;
+        width: 48%;
+        height: 2.5rem;
+        dt {
+          width: 90%;
+          margin: 0 auto;
+          height: 80%;
+        }
+        dd {
+          text-align: center;
+          margin-top: 0.1rem;
+          font-size: 0.2rem;
+        }
+      }
+    }
+  }
+  .on {
+    color: skyblue;
+    border-left: 1px solid skyblue;
+  }
+  .wrap_classify_wrap {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    .classify_search {
+      font-size: 0.3rem;
+      height: 0.5rem;
+      text-align: center;
+      border-radius: 3rem;
+      margin: 0 auto;
+      width: 85%;
+      background: #ccc;
+      margin-top: 0.1rem;
+      line-height: 0.5rem;
+      
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }

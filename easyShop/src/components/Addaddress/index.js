@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Checkbox,Picker, List } from 'antd-mobile';
 import { district } from 'antd-mobile-demo-data';
 import { createForm,formShape } from 'rc-form';
+import arrayTreeFilter from 'array-tree-filter';
 import 'antd-mobile/dist/antd-mobile.css'
 import './add.scss'
 import {observer,inject} from 'mobx-react'
@@ -16,7 +17,11 @@ class Addaddress extends Component {
       constructor(props){
           super(props)
           this.state = {
-            value: null
+            value: null,
+            data: [],
+            cols: 1,
+            pickerValue: [],
+            asyncValue: []
           };
       }
       closeDo = () => {
@@ -25,22 +30,23 @@ class Addaddress extends Component {
       getSel() {
         const value = this.state.pickerValue;
         console.log(value)
+        console.log(this.state)
         if (!value) {
           return '';
         }
+        const treeChildren = arrayTreeFilter(district, (c, level) => c.value === value[level]);
+        return treeChildren.map(v => v.label).join(',');
       }
       submit = () => { 
-        this.props.mine.getNewAdd({address: "", city_id: 37, district_id: 403,is_default: false,mobile: "15345678901",
-        name: "哈哈哈",
-        province_id: 2
-        });
-        this.props.form.validateFields((error, value) => {
-          console.log(error, value);
-        });
+      
+          this.state.pickerValue.map(item=>{
+
+          })
       }
     render() {
       const { getFieldProps} = this.props.form;
-       console.log(this.props.mine)
+      console.log(this.getSel())
+      console.log(this.state.value)
        return  <div className='add'>
                 <header>
                     <h5>新增地址</h5>
@@ -64,12 +70,8 @@ class Addaddress extends Component {
                               onOk={() => this.setState({ visible: false })}
                               onDismiss={() => this.setState({ visible: false })}
                               >
-                              <List.Item {...getFieldProps('city',{
-                                getSel(){},
-                              rules: [{required: true}],
-                                       })}
-                              // extra={this.getSel()} 
-                               onClick={() => this.setState({ visible: true })}>
+                              <List.Item extra={this.getSel()} onClick={() => this.setState({ visible: true })}>
+                                Visible state
                               </List.Item>
                       </Picker>
                       <input {...getFieldProps('address', {
@@ -91,4 +93,4 @@ class Addaddress extends Component {
     }
 }
 
-export default createForm()(Addaddress)
+export default createForm()(Addaddress);
