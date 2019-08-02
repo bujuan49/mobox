@@ -43,11 +43,7 @@ class Addaddress extends Component {
   //保存
   submit = () => {
     let province=this.getSel();
-    //console.log(province)
-    //const value = this.state.pickerValue;
     this.props.form.validateFields((error, value) => {
-   //   console.log(this.getSel())
-      // console.log(value)
       this.props.mine.getNewAdd({
         address: value.address,
         is_default: false,
