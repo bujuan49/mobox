@@ -125,7 +125,14 @@ import Buttons from "../../components/Button"
                             <div className={style.off} onClick={this.onClose}>X</div>
                         </div>
                         <div className={style.shop_contadd}>
-                            <div><span>数量 : </span><Buttons/></div>
+                            <div>
+                                <span>数量 : </span>
+                                <div className={style.button_count}>
+                                    <span onClick={()=>this.props.shop.changeCount('-')}>-</span>
+                                    <b>{this.props.shop.count}</b>
+                                    <span onClick={()=>this.props.shop.changeCount('+')}>+</span>
+                                </div>
+                            </div>
                         </div>
                         <div className={style.add_shop}>
                         <div className={style.addCart} onClick={()=>this.addCart(newdatail&&newdatail.productList[0].id,newdatail&&newdatail.productList[0].goods_id)}>加入购物车</div>

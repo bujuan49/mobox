@@ -21,7 +21,6 @@ class Login extends React.Component {
             if(this.props.login.code===0){
                 this.props.history.push("/home/hompage")
             }else if(this.props.login.code===1000){
-                
                 this.props.history.push("/login")
             }
           }

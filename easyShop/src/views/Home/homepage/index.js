@@ -2,6 +2,7 @@ import React from 'react';
 import {Carousel} from "antd"
 import {inject, observer} from 'mobx-react';
 import "./homepage.scss"
+import LazyImage from "../../../components/lazy-image"
 @inject('home')
 @observer
 class homepage extends React.Component {
@@ -21,7 +22,9 @@ class homepage extends React.Component {
                         {
                             banner&&banner.map(item=>
                                <div key={item.id}>
-                                <h3><img src={item.image_url} alt={item.content}/></h3>
+                                    <h3>
+                                        <img src={item.image_url} alt={item.content}/>
+                                    </h3>
                                </div> 
                             )
                         }
@@ -60,6 +63,14 @@ class homepage extends React.Component {
                             newGoodsList&&newGoodsList.map(item=>
                                 <div className="sp_box" key={item.id} onClick={()=>this.props.history.push({pathname:"/newDatail/"+item.id})}>
                                     <img src={item.list_pic_url} alt=""/>
+                                    {/* <LazyImage
+                                        sizes="200px"
+                                        srcset="https://placehold.it/200x300?text=Image2 200w, https://placehold.it/400x600?text=Image2 400w"
+                                        src={item.list_pic_url}
+                                        alt="200x300"
+                                        // width="200"
+                                        // height="300"
+                                    /> */}
                                     <p>{item.name}</p>
                                     <h6>￥{item.retail_price}</h6>
                                 </div>
