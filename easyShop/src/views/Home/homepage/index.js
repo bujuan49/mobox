@@ -62,15 +62,15 @@ class homepage extends React.Component {
                         {
                             newGoodsList&&newGoodsList.map(item=>
                                 <div className="sp_box" key={item.id} onClick={()=>this.props.history.push({pathname:"/newDatail/"+item.id})}>
-                                    <img src={item.list_pic_url} alt=""/>
-                                    {/* <LazyImage
+                                    {/* <img src={item.list_pic_url} alt=""/> */}
+                                    <LazyImage
                                         sizes="200px"
-                                        srcset="https://placehold.it/200x300?text=Image2 200w, https://placehold.it/400x600?text=Image2 400w"
+                                        srcset="https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/8bc5c8ca3da4043fc6c9dbfb32d5dc89_121_121.jpg"
                                         src={item.list_pic_url}
                                         alt="200x300"
                                         // width="200"
                                         // height="300"
-                                    /> */}
+                                    />
                                     <p>{item.name}</p>
                                     <h6>￥{item.retail_price}</h6>
                                 </div>

@@ -1,5 +1,5 @@
 import {observable,action} from "mobx"
-import {goodscount,getCart,addCart} from "../../services/index"
+import {goodscount,getCart,addCart,cartChecked,cartDelete} from "../../services/index"
 import { genPercentAdd } from "antd/lib/upload/utils";
 import { async } from "q";
 export default class Shop{
