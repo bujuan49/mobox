@@ -20,5 +20,6 @@ export function cartChecked(parmas){
     return request.post("/cart/checked",parmas)
 }
 export function cartDelete(parmas){
+    console.log("parmas...",parmas)
     return request.post("/cart/delete",parmas)
 }

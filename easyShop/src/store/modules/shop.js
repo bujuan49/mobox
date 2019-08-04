@@ -10,9 +10,10 @@ export default class Shop{
         let data=await goodscount()
         this.sum =data.data.cartTotal.goodsCount
     }
-    /***
-     * 获取购物车所以商品
+      /***
+     * 获取购物车商品
      ***/
+
     @action getallShop= async (id)=>{
         let data=await getCart();
         //console.log("shop....",data)
@@ -38,17 +39,30 @@ export default class Shop{
        }
     }
     /***
-     * 加减商品
+     * 添加商品
      ***/
     @action changeCount= async (type,id)=>{
-        type==='+'? this.count++: this.count--;
+        if(type==='+'){
+            this.allShop.cartList.map(item=>{
+                if(item.id==id){
+                    item.number++
+                }
+            })
+        }else if(type==='-'){
+            this.allShop.cartList.map(item=>{
+                if(item.id==id){
+                    item.number--
+                }
+            })
+        }
+        //type==='+'? this.count++: this.count--;
     }
     /***
      * 添加商品
      ***/
     @action getAdd= async(payload)=>{
         let data=await addCart(payload);
-        console.log(data)
+        //console.log(data)
     }
     /***
      * 商品是否选中
@@ -62,6 +76,6 @@ export default class Shop{
      ***/
     @action shopDelete=async (payload)=>{
         let data= await cartDelete(payload);
-        console.log(data)
+        this.allShop=data.data
     }
 }

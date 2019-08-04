@@ -81,8 +81,6 @@ class Addaddress extends Component {
                       <div className='default'>
                        <span>设置默认地址</span> <CheckboxItem/>
                       </div>
-                      
-              
                 </section>
                 <div className='btns'>
                       <button type="primary" className="login-form-no" onClick={()=>this.closeDo()}>取消</button>
