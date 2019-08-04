@@ -19,6 +19,7 @@ city.map(item => {
 
 @inject('mine')
 @observer
+
 class Addaddress extends Component {
   static propTypes = {
     form: formShape
@@ -26,12 +27,12 @@ class Addaddress extends Component {
   constructor(props) {
     super(props)
     this.state = {
-              value: '',
-              // fields: {name: ''} 
-              addName: null,
-              addPhone:null,
-              addPlace:null
-                }
+      value: '',
+      // fields: {name: ''} 
+      addName: null,
+      addPhone: null,
+      addPlace: null
+    }
 
   }
 
@@ -51,7 +52,7 @@ class Addaddress extends Component {
   submit = () => {
     const values = this.state.pickerValue;
     this.props.form.validateFields((value) => {
-    //  console.log(value)
+      //  console.log(value)
       this.props.mine.getNewAdd({
         address: this.state.addPlace,
         is_default: false,
@@ -75,7 +76,6 @@ class Addaddress extends Component {
       </header>
       <section>
         <input  {...getFieldProps('names', {
-          // have to write original onChange here if you need
           rules: [{ required: true }],
         })} placeholder='姓名'
           onChange={(e) => this.setState({ addName: e.target.value })}
@@ -86,14 +86,11 @@ class Addaddress extends Component {
           onChange={(e) => this.setState({ addPhone: e.target.value })}
         />
         <Picker {...getFieldProps('city', {
-          //  getSel(){},
           rules: [{ required: true }],
         })}
           visible={this.state.visible}
           data={city}
-          // initialValue=' 北京/北京市/东城区'
           value={this.state.pickerValue}
-
           onChange={v => this.setState({ pickerValue: v })}
           onOk={() => this.setState({ visible: false })}
           onDismiss={() => this.setState({ visible: false })}
